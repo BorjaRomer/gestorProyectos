@@ -9,3 +9,4 @@ def prueba():
     print("Me cago en mi vida")
     print("Me cago en mi puta vida")
     print("Hola aitorrr")
+    print("1+2")
