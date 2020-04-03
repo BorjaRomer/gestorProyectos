@@ -7,3 +7,4 @@ def prueba():
     print("No funciona bien")
     print("prueba de nuevo")
     print("Me cago en mi vida")
+    print("Me cago en mi puta vida")
