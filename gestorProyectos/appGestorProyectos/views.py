@@ -10,4 +10,4 @@ def prueba():
     print("Me cago en mi puta vida")
     print("Hola aitorrr")
     print("1+2+3+4")
-    print("12345")
+    print("123456")
