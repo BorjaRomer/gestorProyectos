@@ -4,3 +4,4 @@ from django.shortcuts import render
 def prueba():
     print("Hola")
     print("algo")
+    print("No funciona bien")
