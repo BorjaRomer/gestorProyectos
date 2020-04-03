@@ -6,3 +6,4 @@ def prueba():
     print("algo")
     print("No funciona bien")
     print("prueba de nuevo")
+    print("Me cago en mi vida")
