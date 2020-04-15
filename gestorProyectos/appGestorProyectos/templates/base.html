@@ -1,0 +1,13 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IW Reto 3</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <h1>IW RETO 3</h1>
+    <h2>{{ titulo_pagina }}</h2>
+    {% block contenido %} {% endblock %}
+</body>
+</html>
