@@ -1,14 +1,16 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-def prueba():
-    print("Hola")
-    print("algo")
-    print("No funciona bien")
-    print("prueba de nuevo")
-    print("Me cago en mi vida")
-    print("Me cago en mi puta vida")
-    print("Hola aitorrr")
-    print("1+2+3+4")
-    print("123457")
-    print("123456")
+from . forms import ProyectoForm
+
+
+def show_proyecto_form(request):
+    form = ProyectoForm()
+    return render(request, 'proyecto_form.html', {'form': form})
+
+def post_proyecto_form(request):
+    form = ProyectoForm(request.POST)
+    if form.is_valid():
+        nombre = form.cleaned_data['nombre']
+        return HttpResponse(f"El nombre del proyecto es:  {nombre}")
