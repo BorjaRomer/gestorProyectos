@@ -6,6 +6,7 @@ from django.db import models
 # Hay que darle una vuelta todavia o preguntarle a el porque no estoy seguro.
 # Aun no he creado la BBDD con makemigrations porque le tendremos que hacer cambios y pensarlo bien.
 
+"""
 class Empleado(models.Model):
     dni = models.CharField
     nombre = models.CharField
@@ -20,26 +21,30 @@ class Tarea(models.Model):
     descripcion = models.CharField(max_length=50)
     fecha_inicio_fin = models.DateField
     # Tarea tiene una relacion muchas a uno, tiene un empleado por tarea, pero un empleado puede tener varias tareas.
-    responsable = models.ForeignKey(Empleado)
-    nivel_prioridad = models.IntegerField(max_length=1)
+    responsable = models.ForeignKey(Empleado, on_delete=models.CASCADE)
+    nivel_prioridad = models.IntegerField()
     # Esto lo he cogido de la web de django: https://docs.djangoproject.com/en/3.0/ref/models/fields/ , es para darle unos valores fijos y que no puedan ser otros. Vienen en el pdf.
-    estado_tarea_chocices = (
+    estado_tarea_choices = (
+        ('--------', '--------'),
         ('abierta', 'abierta'),
         ('asignada', 'asignada'),
         ('en proceso', 'en proceso'),
         ('finalizada', 'finalizada'),
     )
-    estado_tarea = models.CharField(choices=estado_tarea_chocices, default='abierta')
-
+    estado_tarea = models.CharField(choices=estado_tarea_choices, default='--------', max_length=100)
+"""
 
 class Proyecto(models.Model):
-    nombre = models.CharField(max_length=20)
-    descripcion = models.CharField(max_length=50)
-    fecha_inicio = models.DateField
-    fecha_fin = models.DateField
-    presupuesto = models.IntegerField
-    cliente = models.CharField
+    nombre = models.CharField(max_length=50)
+    descripcion = models.CharField(max_length=300)
+    fecha_inicio = models.DateField()
+    fecha_fin = models.DateField()
+    presupuesto = models.IntegerField()
+    nombre_cliente = models.CharField(max_length=40)
+    apellidos_cliente = models.CharField(max_length=100)
+    email_cliente = models.EmailField()
+    telefono_cliente = models.IntegerField()
     # Proyecto tiene una relacion uno a muchos, tiene varias tareas.
-    tarea = models.ForeignKey(Tarea, on_delete=models.CASCADE)
+    #tarea = models.ForeignKey(Tarea, on_delete=models.CASCADE)
     # Proyecto tiene una relacion muchos a muchos, tiene varios empleados y un empleado, puede tener varios proyectos.
-    empleado = models.ManyToManyField(Empleado)
+    #empleado = models.ManyToManyField(Empleado)
