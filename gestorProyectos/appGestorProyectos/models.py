@@ -15,6 +15,9 @@ class Empleado(models.Model):
     email = models.EmailField(max_length=254)
     telefono = models.IntegerField
 
+    def __str__(self):
+        return f"{self.nombre}"
+
 
 class Tarea(models.Model):
     nombre = models.CharField(max_length=20)
@@ -34,6 +37,9 @@ class Tarea(models.Model):
     )
     estado_tarea = models.CharField(choices=estado_tarea_choices, default='--------', max_length=20)
 
+    def __str__(self):
+        return f"{self.nombre}"
+
 
 class Proyecto(models.Model):
     nombre = models.CharField(max_length=20)
@@ -49,3 +55,6 @@ class Proyecto(models.Model):
     tarea = models.ForeignKey(Tarea, on_delete=models.CASCADE)
     # Proyecto tiene una relacion muchos a muchos, tiene varios empleados y un empleado, puede tener varios proyectos.
     empleado = models.ManyToManyField(Empleado)
+
+    def __str__(self):
+        return f"{self.nombre}"
