@@ -120,7 +120,7 @@ class CrearEmpleadoView(View):
         if form.is_valid():
             form.save()
             # Volvemos a la lista de empleados
-            return redirect('empleados')
+            return redirect('empleado_list')
 
         return render(request, 'empleado_form.html', {'form': form})
 
