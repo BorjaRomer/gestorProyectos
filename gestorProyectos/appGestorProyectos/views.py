@@ -82,6 +82,7 @@ class CrearEmpleadoView(View):
 
         return render(request, 'empleado_form.html', {'form': form})
 
+
 class EmpleadoDetailView(DetailView):
     model = Empleado
     template_name = 'empleado.html'
@@ -90,6 +91,7 @@ class EmpleadoDetailView(DetailView):
         context = super(EmpleadoDetailView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Detalle del empleado'
         return context
+
 
 class EmpleadoListView(ListView):
     model = Empleado
