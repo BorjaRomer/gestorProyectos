@@ -2,7 +2,7 @@
 
 {% block contenido %}
 
-<form action="{% url 'proyecto_form' %}" method="post">
+<form>
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Proyecto nuevo">

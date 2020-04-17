@@ -30,15 +30,6 @@ class CrearProyectoView(View):
         }
         return render(request, 'proyecto_form.html', context)
 
-    def post(self, request, *args, **kwargs):
-        form = ProyectoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            # Volvemos a la lista de tareas
-            return redirect('proyecto')
-
-        return render(request, 'proyecto_form.html', {'form': form})
-
 
 class ProyectoDetailView(DetailView):
     model = Proyecto
