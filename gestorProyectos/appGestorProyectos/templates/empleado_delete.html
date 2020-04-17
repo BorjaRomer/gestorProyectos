@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<form method="post">
+    {% csrf_token %}
+    <h3>¿Desea eliminar el empleado llamado {{ object.nombre }}?</h3>
+    <button class="btn btn-danfer" type="submit">Sí, eliminar</button>
+    <a class="btn btn-default" href="{% url 'empleado_list' %}">Cancelar</a>
+</form>
+
+{% endblock %}

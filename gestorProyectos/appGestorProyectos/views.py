@@ -125,6 +125,18 @@ class CrearEmpleadoView(View):
         return render(request, 'empleado_form.html', {'form': form})
 
 
+class EmpleadoUpdateView(UpdateView):
+    model = Empleado
+    form_class = EmpleadoForm
+    template_name = 'empleado_form.html'
+    success_url = reverse_lazy('empleado_list')
+
+
+class EmpleadoDeleteView(DeleteView):
+    model = Empleado
+    template_name = 'empleado_delete.html'
+    success_url = reverse_lazy('empleado_list')
+
 
 class EmpleadoDetailView(DetailView):
     model = Empleado

@@ -17,6 +17,7 @@
             <td>{{ proyecto.fecha_inicio }}</td>
             <td>{{ proyecto.fecha_fin }}</td>
             <td><a href="{% url 'proyecto' proyecto.id %}">Detalles</a> </td>
+            <td><a href="{% url 'proyecto' proyecto.id %}">Detalles</a> </td>
         </tr>
         {% endfor %}
     </tbody>
