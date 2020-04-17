@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha de inicio</th>
+            <th>Fecha de fin</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for proyecto in proyecto_list %}
+        <tr>
+            <td>{{ proyecto.nombre }}</td>
+            <td>{{ proyecto.fecha_inicio }}</td>
+            <td>{{ proyecto.fecha_fin }}</td>
+            <td><a href="{% url 'proyecto' proyecto.id %}">Detalles</a> </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+

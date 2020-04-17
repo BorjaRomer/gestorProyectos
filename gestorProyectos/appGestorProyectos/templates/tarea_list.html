@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha de inicio</th>
+            <th>Fecha de fin</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for tarea in tarea_list %}
+        <tr>
+            <td>{{ tarea.nombre }}</td>
+            <td>{{ tarea.fecha_inicio }}</td>
+            <td>{{ tarea.fecha_fin }}</td>
+            <td><a href="{% url 'tarea' tarea.id %}">Detalles</a> </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

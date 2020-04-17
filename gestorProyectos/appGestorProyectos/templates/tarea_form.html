@@ -2,7 +2,7 @@
 
 {% block contenido %}
 
-<form>
+<form action="{% url 'tarea_form' %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Nueva tarea">

@@ -5,7 +5,8 @@ from django.views.generic import ListView, DetailView
 from .forms import ProyectoForm, TareaForm, EmpleadoForm
 from .models import Empleado, Proyecto, Tarea
 
-#GENERAL
+
+# GENERAL
 class ProyectosListView(ListView):
     model = Proyecto
     template_name = 'home.html'
@@ -18,7 +19,7 @@ class ProyectosListView(ListView):
         return context
 
 
-#PROYECTOS
+# PROYECTOS
 class CrearProyectoView(View):
 
     def get(self, request, *args, **kwargs):
@@ -28,6 +29,15 @@ class CrearProyectoView(View):
             'titulo_pagina': 'Crear un nuevo proyecto'
         }
         return render(request, 'proyecto_form.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = ProyectoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Volvemos a la lista de tareas
+            return redirect('proyecto')
+
+        return render(request, 'proyecto_form.html', {'form': form})
 
 
 class ProyectoDetailView(DetailView):
@@ -40,7 +50,17 @@ class ProyectoDetailView(DetailView):
         return context
 
 
-#TAREAS
+class ProyectoListView(ListView):
+    model = Proyecto
+    queryset = Proyecto.objects.order_by('nombre')
+    template_name = "proyecto_list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(ProyectoListView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Listado de proyectos'
+        return context
+
+# TAREAS
 class CrearTareaView(View):
 
     def get(self, request, *args, **kwargs):
@@ -50,6 +70,16 @@ class CrearTareaView(View):
             'titulo_pagina': 'Crear una nueva tarea'
         }
         return render(request, 'tarea_form.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = TareaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Volvemos a la lista de tareas
+            return redirect('tarea')
+
+        return render(request, 'tarea_form.html', {'form': form})
+
 
 class TareaDetailView(DetailView):
     model = Tarea
@@ -61,8 +91,18 @@ class TareaDetailView(DetailView):
         return context
 
 
+class TareaListView(ListView):
+    model = Tarea
+    queryset = Tarea.objects.order_by('nombre')
+    template_name = "tarea_list.html"
 
-#EMPLEADOS
+    def get_context_data(self, **kwargs):
+        context = super(TareaListView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Listado de tareas'
+        return context
+
+
+# EMPLEADOS
 class CrearEmpleadoView(View):
 
     def get(self, request, *args, **kwargs):
@@ -102,4 +142,3 @@ class EmpleadoListView(ListView):
         context = super(EmpleadoListView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Listado de empleados'
         return context
-
