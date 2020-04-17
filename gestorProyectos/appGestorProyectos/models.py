@@ -20,7 +20,6 @@ class Tarea(models.Model):
     fecha_fin = models.DateField(("Date"), default=date.today)
     responsable = models.ForeignKey(Empleado, on_delete=models.CASCADE, default="")
     nivel_prioridad = models.IntegerField(default=0)
-    # https://docs.djangoproject.com/en/3.0/ref/models/fields/
     estado_tarea_choices = (
         ('', ''),
         ('abierta', 'abierta'),
@@ -39,13 +38,13 @@ class Proyecto(models.Model):
     descripcion = models.CharField(max_length=50)
     fecha_inicio = models.DateField(("Date"), default=date.today)
     fecha_fin = models.DateField(("Date"), default=date.today)
-    presupuesto = models.IntegerField
+    presupuesto = models.IntegerField(default=0)
     nombre_cliente = models.CharField(max_length=20, default="")
     apellidos_cliente = models.CharField(max_length=50, default="")
     email_cliente = models.EmailField(max_length=100, default="")
-    telefono_cliente = models.IntegerField
+    telefono_cliente = models.IntegerField(default=0)
     tarea = models.ForeignKey(Tarea, on_delete=models.CASCADE)
-    responsable = models.ManyToManyField(Empleado)
+    responsable = models.ForeignKey(Empleado, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.nombre}"
+        return f"{self.nombre} {self.id}"
