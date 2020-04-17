@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import ListView, DetailView
 from .forms import ProyectoForm, TareaForm, EmpleadoForm
@@ -62,6 +62,15 @@ class CrearEmpleadoView(View):
         }
         return render(request, 'empleado_form.html', context)
 
+    def post(self, request, *args, **kwargs):
+        form = EmpleadoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Volvemos a la lista de empleados
+            return redirect('empleado')
+
+        return render(request, 'empleado_form.html', {'form': form})
+
 class EmpleadoDetailView(DetailView):
     model = Empleado
     template_name = 'empleado.html'
@@ -71,5 +80,13 @@ class EmpleadoDetailView(DetailView):
         context['titulo_pagina'] = 'Detalle del empleado'
         return context
 
+class EmpleadoListView(ListView):
+    model = Empleado
+    queryset = Empleado.objects.order_by('nombre')
+    template_name = "empleado_list.html"
 
+    def get_context_data(self, **kwargs):
+        context = super(EmpleadoListView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Listado de empleados'
+        return context
 
