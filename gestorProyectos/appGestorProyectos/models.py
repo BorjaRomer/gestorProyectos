@@ -1,44 +1,36 @@
 from django.db import models
 
-# Aqui vamos a poner nuestro modelo de datos que esta en el Drive. Es un ejemplo de momento y habrá que extenderlo.
-# Voy a poner los atributos que vienen en el pdf del reto.
-# Hay que darle una vuelta todavia o preguntarle a el porque no estoy seguro.
-# Aun no he creado la BBDD con makemigrations porque le tendremos que hacer cambios y pensarlo bien.
 
 class Empleado(models.Model):
-    dni = models.CharField
-    nombre = models.CharField
-    apellidos = models.CharField
-    # Esto lo he visto en la web de django y verifica que el email existe.
+    dni = models.CharField(max_length=50)
+    nombre = models.CharField(max_length=50)
+    apellidos = models.CharField(max_length=150)
     email = models.EmailField(max_length=254)
-    telefono = models.IntegerField
+    telefono = models.IntegerField(default=0)
 
 
 class Tarea(models.Model):
-    nombre = models.CharField(max_length=20)
+    nombre = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=50)
-    fecha_inicio_fin = models.DateField
-    # Tarea tiene una relacion muchas a uno, tiene un empleado por tarea, pero un empleado puede tener varias tareas.
+    fecha_inicio_fin = models.DateField()
     responsable = models.ForeignKey(Empleado, on_delete=models.CASCADE)
-    nivel_prioridad = models.IntegerField
-    # Esto lo he cogido de la web de django: https://docs.djangoproject.com/en/3.0/ref/models/fields/ , es para darle unos valores fijos y que no puedan ser otros. Vienen en el pdf.
+    nivel_prioridad = models.IntegerField(default=0)
+    # https://docs.djangoproject.com/en/3.0/ref/models/fields/
     estado_tarea_choices = (
         ('abierta', 'abierta'),
         ('asignada', 'asignada'),
         ('en proceso', 'en proceso'),
         ('finalizada', 'finalizada'),
     )
-    estado_tarea = models.CharField(choices=estado_tarea_choices, max_length=20)
+    estado_tarea = models.CharField(choices=estado_tarea_choices, max_length=50)
 
 
 class Proyecto(models.Model):
-    nombre = models.CharField(max_length=20)
+    nombre = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=50)
-    fecha_inicio = models.DateField
-    fecha_fin = models.DateField
-    presupuesto = models.IntegerField
-    cliente = models.CharField
-    # Proyecto tiene una relacion uno a muchos, tiene varias tareas.
+    fecha_inicio = models.DateField()
+    fecha_fin = models.DateField()
+    presupuesto = models.IntegerField(default=0)
+    cliente = models.CharField(max_length=50)
     tarea = models.ForeignKey(Tarea, on_delete=models.CASCADE)
-    # Proyecto tiene una relacion muchos a muchos, tiene varios empleados y un empleado, puede tener varios proyectos.
     empleado = models.ManyToManyField(Empleado)
