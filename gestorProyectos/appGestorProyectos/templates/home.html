@@ -2,6 +2,10 @@
 
 {% block contenido %}
 
-<p>Este es el home</p>
+    {% for pro in listado_proyectos %}
+        <li>
+            {{ pro.id }}: {{ pro.nombre }} (<a href="{% url 'proyecto' pro.id %}">Ver</a>)
+        </li>
+    {% endfor %}
 
 {% endblock %}

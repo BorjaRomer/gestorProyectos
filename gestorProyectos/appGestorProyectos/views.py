@@ -3,11 +3,22 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import ListView, DetailView
 from .forms import ProyectoForm, TareaForm, EmpleadoForm
-
-#PROYECTOS
 from .models import Empleado, Proyecto, Tarea
 
+#GENERAL
+class ProyectosListView(ListView):
+    model = Proyecto
+    template_name = 'home.html'
+    queryset = Proyecto.objects.order_by('nombre')
+    context_object_name = 'listado_proyectos'
 
+    def get_context_data(self, **kwargs):
+        context = super(ProyectosListView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'TUS PROYECTOS'
+        return context
+
+
+#PROYECTOS
 class CrearProyectoView(View):
 
     def get(self, request, *args, **kwargs):
