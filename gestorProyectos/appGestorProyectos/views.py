@@ -5,6 +5,9 @@ from django.views.generic import ListView, DetailView
 from .forms import ProyectoForm, TareaForm, EmpleadoForm
 
 #PROYECTOS
+from .models import Empleado, Proyecto, Tarea
+
+
 class CrearProyectoView(View):
 
     def get(self, request, *args, **kwargs):
@@ -15,6 +18,15 @@ class CrearProyectoView(View):
         }
         return render(request, 'proyecto_form.html', context)
 
+
+class ProyectoDetailView(DetailView):
+    model = Proyecto
+    template_name = 'proyecto.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ProyectoDetailView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Detalles del proyecto'
+        return context
 
 def post_proyecto_form(request):
     form = ProyectoForm(request.POST)
@@ -33,6 +45,14 @@ class CrearTareaView(View):
         }
         return render(request, 'tarea_form.html', context)
 
+class TareaDetailView(DetailView):
+    model = Tarea
+    template_name = 'tarea.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(TareaDetailView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Detalles de la tarea'
+        return context
 
 def post_tarea_form(request):
     form = TareaForm(request.POST)
@@ -50,6 +70,15 @@ class CrearEmpleadoView(View):
             'titulo_pagina': 'Crear un nuevo empleado'
         }
         return render(request, 'empleado_form.html', context)
+
+class EmpleadoDetailView(DetailView):
+    model = Empleado
+    template_name = 'empleado.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(EmpleadoDetailView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Detalle del empleado'
+        return context
 
 
 def post_empleado_form(request):
