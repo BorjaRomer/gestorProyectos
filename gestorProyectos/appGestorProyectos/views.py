@@ -7,7 +7,7 @@ from .forms import ProyectoForm, TareaForm, EmpleadoForm
 from .models import Empleado, Proyecto, Tarea
 
 
-# GENERAL
+# HOME
 class ProyectosListView(ListView):
     model = Proyecto
     template_name = 'home.html'
@@ -30,6 +30,16 @@ class CrearProyectoView(View):
             'titulo_pagina': 'Crear un nuevo proyecto'
         }
         return render(request, 'proyecto_form.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = ProyectoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Volvemos a la lista de proyectos
+            return redirect('proyectos')
+
+        return render(request, 'proyecto_form.html', {'form': form})
+
 
 
 class ProyectoDetailView(DetailView):
@@ -68,7 +78,7 @@ class CrearTareaView(View):
         if form.is_valid():
             form.save()
             # Volvemos a la lista de tareas
-            return redirect('tarea')
+            return redirect('tareas')
 
         return render(request, 'tarea_form.html', {'form': form})
 
@@ -110,7 +120,7 @@ class CrearEmpleadoView(View):
         if form.is_valid():
             form.save()
             # Volvemos a la lista de empleados
-            return redirect('empleado')
+            return redirect('empleados')
 
         return render(request, 'empleado_form.html', {'form': form})
 

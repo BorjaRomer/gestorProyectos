@@ -1,5 +1,5 @@
 from django import forms
-
+from django.forms import ModelForm
 from .models import Proyecto, Tarea, Empleado
 
 
@@ -7,7 +7,7 @@ class DateInput(forms.DateInput):
     input_type = 'date'
 
 
-class ProyectoForm(forms.ModelForm):
+class ProyectoForm(ModelForm):
     class Meta:
         model = Proyecto
         fields = '__all__'
@@ -16,7 +16,8 @@ class ProyectoForm(forms.ModelForm):
             'fecha_fin': DateInput()
         }
 
-class TareaForm(forms.ModelForm):
+
+class TareaForm(ModelForm):
     class Meta:
         model = Tarea
         fields = '__all__'
@@ -25,7 +26,8 @@ class TareaForm(forms.ModelForm):
             'fecha_fin': DateInput()
         }
 
-class EmpleadoForm(forms.ModelForm):
+
+class EmpleadoForm(ModelForm):
     class Meta:
         model = Empleado
         fields = '__all__'
