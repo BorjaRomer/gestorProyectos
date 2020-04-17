@@ -1,7 +1,8 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, request
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 from .forms import ProyectoForm, TareaForm, EmpleadoForm
 from .models import Empleado, Proyecto, Tarea
 
@@ -114,6 +115,7 @@ class CrearEmpleadoView(View):
         return render(request, 'empleado_form.html', {'form': form})
 
 
+
 class EmpleadoDetailView(DetailView):
     model = Empleado
     template_name = 'empleado.html'
@@ -133,3 +135,5 @@ class EmpleadoListView(ListView):
         context = super(EmpleadoListView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Listado de empleados'
         return context
+
+
