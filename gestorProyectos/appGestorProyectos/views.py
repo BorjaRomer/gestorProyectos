@@ -28,11 +28,6 @@ class ProyectoDetailView(DetailView):
         context['titulo_pagina'] = 'Detalles del proyecto'
         return context
 
-def post_proyecto_form(request):
-    form = ProyectoForm(request.POST)
-    if form.is_valid():
-        nombre = form.cleaned_data['nombre']
-        return HttpResponse(f"El nombre del proyecto es:  {nombre}")
 
 #TAREAS
 class CrearTareaView(View):
@@ -54,11 +49,7 @@ class TareaDetailView(DetailView):
         context['titulo_pagina'] = 'Detalles de la tarea'
         return context
 
-def post_tarea_form(request):
-    form = TareaForm(request.POST)
-    if form.is_valid():
-        nombre = form.cleaned_data['nombre']
-        return HttpResponse(f"El nombre de la tarea es:  {nombre}")
+
 
 #EMPLEADOS
 class CrearEmpleadoView(View):
@@ -81,8 +72,4 @@ class EmpleadoDetailView(DetailView):
         return context
 
 
-def post_empleado_form(request):
-        form = EmpleadoForm(request.POST)
-        if form.is_valid():
-            nombre = form.cleaned_data['nombre']
-            return HttpResponse(f"El nombre del empleado es:  {nombre}")
+
