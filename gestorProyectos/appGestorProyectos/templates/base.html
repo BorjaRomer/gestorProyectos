@@ -11,15 +11,16 @@
     <header>
         <h1>GESTION DE PROYECTOS</h1>
         <h2>{{ titulo_pagina }}</h2>
-        <nav>
-            <ul>
-                <li><a href="{% url 'index' %}">Inicio</a></li>
-                <li><a href="{% url 'proyecto_list' %}">Proyectos</a></li>
-                <li><a href="{% url 'tarea_list' %}">Tareas</a></li>
-                <li><a href="{% url 'empleado_list' %}">Empleados</a></li>
-            </ul>
-        </nav>
+
     </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="{% url 'proyecto_list' %}">Proyectos</a></li>
+            <li><a href="{% url 'tarea_list' %}">Tareas</a></li>
+            <li><a href="{% url 'empleado_list' %}">Empleados</a></li>
+        </ul>
+    </nav>
     {% block contenido %} {% endblock %}
 </body>
 
