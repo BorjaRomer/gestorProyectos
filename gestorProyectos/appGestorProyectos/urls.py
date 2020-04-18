@@ -12,7 +12,7 @@ urlpatterns = [
     path('proyecto/<int:pk>/update/', views.ProyectoUpdateView.as_view(), name='proyecto_update'),
     #TAREAS
     path('nueva_tarea/', views.CrearTareaView.as_view(), name='tarea_form'),
-    path('tareas/', views.TareaListView.as_view(), name='tareas'),
+    path('tareas/', views.TareaListView.as_view(), name='tarea_list'),
     path('tarea/<int:pk>/', views.TareaDetailView.as_view(), name='tarea'),
     path('tarea/<int:pk>/delete/', views.TareaDeleteView.as_view(), name='tarea_delete'),
     path('tarea/<int:pk>/update/', views.TareaUpdateView.as_view(), name='tarea_update'),

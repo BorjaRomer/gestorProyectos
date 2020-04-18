@@ -91,7 +91,7 @@ class CrearTareaView(View):
         if form.is_valid():
             form.save()
             # Volvemos a la lista de tareas
-            return redirect('tareas')
+            return redirect('tarea_list')
 
         return render(request, 'tarea_form.html', {'form': form})
 
@@ -120,14 +120,14 @@ class TareaListView(ListView):
 class TareaDeleteView(DeleteView):
     model = Tarea
     template_name = "tarea_delete.html"
-    success_url = reverse_lazy('tareas')
+    success_url = reverse_lazy('tarea_list')
 
 
 class TareaUpdateView(UpdateView):
     model = Tarea
-    fields = ['nombre']
+    form_class = TareaForm
     template_name = "tarea_update.html"
-    success_url = reverse_lazy('tareas')
+    success_url = reverse_lazy('tarea_list')
 
 
 # EMPLEADOS
