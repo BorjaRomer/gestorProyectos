@@ -53,4 +53,9 @@
 
 </table>
 <a href="{% url 'proyectos' %}">Atras</a> </td>
+<br>
+<a href="{% url 'proyecto_delete' proyecto.id %}">Eliminar Proyecto</a> </td>
+<br>
+<a href="{% url 'proyecto_update' proyecto.id %}">Modificar Proyecto</a> </td>
+
 {% endblock %}

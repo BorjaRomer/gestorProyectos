@@ -37,4 +37,8 @@
     </tr>
 </table>
 <a href="{% url 'tareas' %}">Atras</a> </td>
+<br>
+<a href="{% url 'tarea_delete' tarea.id %}">Eliminar Tarea</a> </td>
+<br>
+<a href="{% url 'tarea_update' tarea.id %}">Modificar Tarea</a> </td>
 {% endblock %}

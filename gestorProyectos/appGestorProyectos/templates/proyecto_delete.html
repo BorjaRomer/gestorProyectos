@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<form method="post">
+    {% csrf_token %}
+    <p>¿Estas seguro de eliminar el proyecto: {{ proyecto.nombre }}"?</p>
+    <input type="submit" value="Confirmar">
+</form>
+{% endblock %}

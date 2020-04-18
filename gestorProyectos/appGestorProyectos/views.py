@@ -41,7 +41,6 @@ class CrearProyectoView(View):
         return render(request, 'proyecto_form.html', {'form': form})
 
 
-
 class ProyectoDetailView(DetailView):
     model = Proyecto
     template_name = 'proyecto.html'
@@ -61,6 +60,19 @@ class ProyectoListView(ListView):
         context = super(ProyectoListView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Listado de proyectos'
         return context
+
+
+class ProyectoDeleteView(DeleteView):
+    model = Proyecto
+    template_name = "proyecto_delete.html"
+    success_url = reverse_lazy('proyectos')
+
+
+class ProyectoUpdateView(UpdateView):
+    model = Proyecto
+    fields = ['nombre']
+    template_name = "proyecto_update.html"
+    success_url = reverse_lazy('proyectos')
 
 # TAREAS
 class CrearTareaView(View):
@@ -104,6 +116,18 @@ class TareaListView(ListView):
         return context
 
 
+class TareaDeleteView(DeleteView):
+    model = Tarea
+    template_name = "tarea_delete.html"
+    success_url = reverse_lazy('tareas')
+
+class TareaUpdateView(UpdateView):
+    model = Tarea
+    fields = ['nombre']
+    template_name = "tarea_update.html"
+    success_url = reverse_lazy('tareas')
+
+
 # EMPLEADOS
 class CrearEmpleadoView(View):
 
@@ -120,10 +144,9 @@ class CrearEmpleadoView(View):
         if form.is_valid():
             form.save()
             # Volvemos a la lista de empleados
-            return redirect('empleado_list')
+            return redirect('empleados')
 
         return render(request, 'empleado_form.html', {'form': form})
-
 
 
 class EmpleadoDetailView(DetailView):
@@ -147,3 +170,13 @@ class EmpleadoListView(ListView):
         return context
 
 
+class EmpleadoDeleteView(DeleteView):
+    model = Empleado
+    template_name = "empleado_delete.html"
+    success_url = reverse_lazy('empleados')
+
+class EmpleadoUpdateView(UpdateView):
+    model = Empleado
+    fields = ['nombre']
+    template_name = "empleado_update.html"
+    success_url = reverse_lazy('empleados')
