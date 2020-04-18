@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Empleado(models.Model):
-    dni = models.CharField(max_length=50)
+    dni = models.CharField(max_length=9)
     nombre = models.CharField(max_length=50)
     apellidos = models.CharField(max_length=150)
     email = models.EmailField(max_length=254)
@@ -15,17 +15,18 @@ class Empleado(models.Model):
 
 class Tarea(models.Model):
     nombre = models.CharField(max_length=50)
-    descripcion = models.CharField(max_length=50)
+    descripcion = models.TextField(max_length=200)
     fecha_inicio = models.DateField(("Date"), default=date.today)
     fecha_fin = models.DateField(("Date"), default=date.today)
     responsable = models.ForeignKey(Empleado, on_delete=models.CASCADE, default="")
     nivel_prioridad = models.IntegerField(default=0)
+    notas = models.TextField(max_length=300)
     estado_tarea_choices = (
         ('', ''),
-        ('abierta', 'abierta'),
-        ('asignada', 'asignada'),
-        ('en proceso', 'en proceso'),
-        ('finalizada', 'finalizada'),
+        ('Abierta', 'Abierta'),
+        ('Asignada', 'Asignada'),
+        ('En proceso', 'En proceso'),
+        ('Finalizada', 'Finalizada'),
     )
     estado_tarea = models.CharField(choices=estado_tarea_choices, default='', max_length=20)
 
@@ -35,7 +36,7 @@ class Tarea(models.Model):
 
 class Proyecto(models.Model):
     nombre = models.CharField(max_length=50)
-    descripcion = models.CharField(max_length=50)
+    descripcion = models.TextField(max_length=200)
     fecha_inicio = models.DateField(("Date"), default=date.today)
     fecha_fin = models.DateField(("Date"), default=date.today)
     presupuesto = models.IntegerField(default=0)
