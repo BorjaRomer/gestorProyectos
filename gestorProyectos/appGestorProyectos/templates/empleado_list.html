@@ -1,28 +1,37 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
+{% load static %}
 
-{% block contenido %}
-<table>
-    <thead>
-        <tr>
-            <th>DNI</th>
-            <th>Nombre</th>
-            <th>Apellidos</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for empleado in empleado_list %}
-        <tr>
-            <td>{{ empleado.dni }}</td>
-            <td>{{ empleado.nombre }}</td>
-            <td>{{ empleado.apellidos }}</td>
-            <td><a href="{% url 'empleado' empleado.id %}">Detalles</a> </td>
-            <td><a href="{% url 'empleado_update' empleado.id %}">Editar</a> </td>
-            <td><a href="{% url 'empleado_delete' empleado.id %}">Eliminar</a> </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+{% block main %}
 <br>
-<a href="{% url 'empleado_form' %}">Nuevo empleado</a>
+<a class="btn btn-primary" href="{% url 'empleado_form' %}">Nuevo empleado</a>
+<br>
+<p align="center" class="text-success fa-2x">Lista de empleados</p>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>DNI</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Detalles</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for empleado in empleado_list %}
+            <tr>
+                <td>{{ empleado.dni }}</td>
+                <td>{{ empleado.nombre }}</td>
+                <td>{{ empleado.apellidos }}</td>
+                <td><a class="btn btn-success" href="{% url 'empleado' empleado.id %}">Detalles</a> </td>
+                <td><a class="btn btn-info" href="{% url 'empleado_update' empleado.id %}">Editar</a> </td>
+                <td><a class="btn btn-danger" href="{% url 'empleado_delete' empleado.id %}">Eliminar</a> </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+</div>
+
 {% endblock %}

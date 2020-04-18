@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views import View
-from django.views.generic import ListView, DetailView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
 from .forms import ProyectoForm, TareaForm, EmpleadoForm
 from .models import Empleado, Proyecto, Tarea
 
@@ -130,24 +130,13 @@ class TareaUpdateView(UpdateView):
 
 
 # EMPLEADOS
-class CrearEmpleadoView(View):
+class EmpleadoCreateView(CreateView):
+    model = Empleado
+    form_class = EmpleadoForm
+    template_name = 'empleado_form.html'
 
-    def get(self, request, *args, **kwargs):
-        form = EmpleadoForm
-        context = {
-            'form': form,
-            'titulo_pagina': 'Crear un nuevo empleado'
-        }
-        return render(request, 'empleado_form.html', context)
-
-    def post(self, request, *args, **kwargs):
-        form = EmpleadoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            # Volvemos a la lista de empleados
-            return redirect('empleado_list')
-
-        return render(request, 'empleado_form.html', {'form': form})
+    def get_success_url(self):
+        return reverse('empleado_list')
 
 
 class EmpleadoDetailView(DetailView):

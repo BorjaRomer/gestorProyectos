@@ -32,6 +32,9 @@ class EmpleadoForm(ModelForm):
         model = Empleado
         fields = '__all__'
         widgets = {
-            'fecha_inicio': DateInput(),
-            'fecha_fin': DateInput()
+            'dni': forms.TextInput(attrs={'class': 'form-control'}),
+            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+            'apellidos': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'telefono': forms.NumberInput(attrs={'class': 'form-control'}),
         }

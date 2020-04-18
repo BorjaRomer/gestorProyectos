@@ -1,8 +1,7 @@
-{% extends "base.html" %}
+{% extends 'index.html' %}
+{% load static %}
 
-{% load bootstrap4 %}
-
-{% block contenido %}
+{% block main %}
 
 <table>
     <tr>
@@ -28,7 +27,5 @@
 </table>
 <a href="{% url 'empleado_list' %}">Atras</a> </td>
 <br>
-<a href="{% url 'empleado_delete' empleado.id %}">Eliminar Empleado</a> </td>
-<br>
-<a href="{% url 'empleado_update' empleado.id %}">Modificar Empleado</a> </td>
+
 {% endblock %}

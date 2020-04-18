@@ -17,7 +17,7 @@ urlpatterns = [
     path('tarea/<int:pk>/delete/', views.TareaDeleteView.as_view(), name='tarea_delete'),
     path('tarea/<int:pk>/update/', views.TareaUpdateView.as_view(), name='tarea_update'),
     #EMPLEADOS
-    path('nuevo_empleado/', views.CrearEmpleadoView.as_view(), name='empleado_form'),
+    path('nuevo_empleado/', views.EmpleadoCreateView.as_view(), name='empleado_form'),
     path('empleados/', views.EmpleadoListView.as_view(), name='empleado_list'),
     path('empleado/<int:pk>/', views.EmpleadoDetailView.as_view(), name='empleado'),
     path('empleado/<int:pk>/delete/', views.EmpleadoDeleteView.as_view(), name='empleado_delete'),
