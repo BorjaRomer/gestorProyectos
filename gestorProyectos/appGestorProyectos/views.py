@@ -36,7 +36,7 @@ class CrearProyectoView(View):
         if form.is_valid():
             form.save()
             # Volvemos a la lista de proyectos
-            return redirect('proyectos')
+            return redirect('proyecto_list')
 
         return render(request, 'proyecto_form.html', {'form': form})
 
@@ -65,14 +65,14 @@ class ProyectoListView(ListView):
 class ProyectoDeleteView(DeleteView):
     model = Proyecto
     template_name = "proyecto_delete.html"
-    success_url = reverse_lazy('proyectos')
+    success_url = reverse_lazy('proyecto_list')
 
 
 class ProyectoUpdateView(UpdateView):
     model = Proyecto
-    fields = ['nombre']
+    form_class = ProyectoForm
     template_name = "proyecto_update.html"
-    success_url = reverse_lazy('proyectos')
+    success_url = reverse_lazy('proyecto_list')
 
 
 # TAREAS

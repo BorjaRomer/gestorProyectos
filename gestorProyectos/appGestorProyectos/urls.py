@@ -6,7 +6,7 @@ urlpatterns = [
     path('home/', views.ProyectosListView.as_view(), name='index'),
     #PROYECTOS
     path('nuevo_proyecto/', views.CrearProyectoView.as_view(), name='proyecto_form'),
-    path('proyectos/', views.ProyectoListView.as_view(), name='proyectos'),
+    path('proyectos/', views.ProyectoListView.as_view(), name='proyecto_list'),
     path('proyecto/<int:pk>/', views.ProyectoDetailView.as_view(), name='proyecto'),
     path('proyecto/<int:pk>/delete/', views.ProyectoDeleteView.as_view(), name='proyecto_delete'),
     path('proyecto/<int:pk>/update/', views.ProyectoUpdateView.as_view(), name='proyecto_update'),
