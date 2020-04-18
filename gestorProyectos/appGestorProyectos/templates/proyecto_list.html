@@ -17,6 +17,8 @@
             <td>{{ proyecto.fecha_inicio }}</td>
             <td>{{ proyecto.fecha_fin }}</td>
             <td><a href="{% url 'proyecto' proyecto.id %}">Detalles</a> </td>
+            <td><a href="{% url 'proyecto_update' proyecto.id %}">Editar</a> </td>
+            <td><a href="{% url 'proyecto_delete' proyecto.id %}">Eliminar</a> </td>
         </tr>
         {% endfor %}
     </tbody>
