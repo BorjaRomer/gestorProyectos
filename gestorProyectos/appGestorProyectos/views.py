@@ -74,6 +74,7 @@ class ProyectoUpdateView(UpdateView):
     template_name = "proyecto_update.html"
     success_url = reverse_lazy('proyectos')
 
+
 # TAREAS
 class CrearTareaView(View):
 
@@ -121,6 +122,7 @@ class TareaDeleteView(DeleteView):
     template_name = "tarea_delete.html"
     success_url = reverse_lazy('tareas')
 
+
 class TareaUpdateView(UpdateView):
     model = Tarea
     fields = ['nombre']
@@ -144,7 +146,7 @@ class CrearEmpleadoView(View):
         if form.is_valid():
             form.save()
             # Volvemos a la lista de empleados
-            return redirect('empleados')
+            return redirect('empleado_list')
 
         return render(request, 'empleado_form.html', {'form': form})
 
@@ -173,10 +175,11 @@ class EmpleadoListView(ListView):
 class EmpleadoDeleteView(DeleteView):
     model = Empleado
     template_name = "empleado_delete.html"
-    success_url = reverse_lazy('empleados')
+    success_url = reverse_lazy('empleado_list')
+
 
 class EmpleadoUpdateView(UpdateView):
     model = Empleado
-    fields = ['nombre']
+    form_class = EmpleadoForm
     template_name = "empleado_update.html"
-    success_url = reverse_lazy('empleados')
+    success_url = reverse_lazy('empleado_list')
