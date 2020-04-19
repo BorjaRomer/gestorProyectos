@@ -1,29 +1,48 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
+{% load static %}
 
-{% block contenido %}
-<table>
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Fecha de inicio</th>
-            <th>Fecha de fin</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for proyecto in proyecto_list %}
-        <tr>
-            <td>{{ proyecto.nombre }}</td>
-            <td>{{ proyecto.fecha_inicio }}</td>
-            <td>{{ proyecto.fecha_fin }}</td>
-            <td><a href="{% url 'proyecto' proyecto.id %}">Detalles</a> </td>
-            <td><a href="{% url 'proyecto_update' proyecto.id %}">Editar</a> </td>
-            <td><a href="{% url 'proyecto_delete' proyecto.id %}">Eliminar</a> </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+{% block header %}
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0">Lista de proyectos</h1>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main %}
 <br>
-<a href="{% url 'proyecto_form' %}">Nuevo proyecto</a>
+<a class="btn btn-primary" href="{% url 'empleado_form' %}">Nuevo proyecto</a>
+<br>
+<br>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de fin</th>
+                <th>Responsable</th>
+                <th>Detalles</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for proyecto in proyecto_list %}
+            <tr>
+                <td>{{ proyecto.nombre }}</td>
+                <td>{{ proyecto.fecha_inicio }}</td>
+                <td>{{ proyecto.fecha_fin }}</td>
+                <th>{{ proyecto.responsable }}</th>
+                <td><a class="btn btn-success" href="{% url 'proyecto' proyecto.id %}">Detalles</a> </td>
+                <td><a class="btn btn-info" href="{% url 'proyecto_update' proyecto.id %}">Editar</a> </td>
+                <td><a class="btn btn-danger" href="{% url 'proyecto_delete' proyecto.id %}">Eliminar</a> </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+</div>
+
 {% endblock %}
 

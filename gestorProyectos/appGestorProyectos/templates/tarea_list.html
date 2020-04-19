@@ -1,26 +1,49 @@
-{% extends 'base.html' %}
 
-{% block contenido %}
-<table>
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Fecha de inicio</th>
-            <th>Fecha de fin</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for tarea in tarea_list %}
-        <tr>
-            <td>{{ tarea.nombre }}</td>
-            <td>{{ tarea.fecha_inicio }}</td>
-            <td>{{ tarea.fecha_fin }}</td>
-            <td><a href="{% url 'tarea' tarea.id %}">Detalles</a> </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+
+{% extends 'index.html' %}
+{% load static %}
+
+{% block header %}
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0">Lista de tareas</h1>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main %}
 <br>
-<a href="{% url 'tarea_form' %}">Nueva tarea</a>
+<a class="btn btn-primary" href="{% url 'empleado_form' %}">Nueva tarea</a>
+<br>
+<br>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de fin</th>
+                <th>estado de la tarea</th>
+                <th>Detalles</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tarea in tarea_list %}
+            <tr>
+                <td>{{ tarea.nombre }}</td>
+                <td>{{ tarea.fecha_inicio }}</td>
+                <td>{{ tarea.fecha_fin }}</td>
+                <td>{{ tarea.estado_tarea }}</td>
+                <td><a class="btn btn-success" href="{% url 'tarea' tarea.id %}">Detalles</a> </td>
+                <td><a class="btn btn-info" href="{% url 'tarea_update' tarea.id %}">Editar</a> </td>
+                <td><a class="btn btn-danger" href="{% url 'tarea_delete' tarea.id %}">Eliminar</a> </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+</div>
+
 {% endblock %}
