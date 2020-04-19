@@ -2464,47 +2464,6 @@ textarea.form-control.is-invalid {
     align-self: flex-end;
 }
 
-.btn-detail {
-    color: #fff;
-    background-color: #19a320;
-    border-color: #128538;
-}
-
-.btn-detail:hover {
-    color: #fff;
-    background-color: #118d5d;
-    border-color: #118b40;
-}
-
-.btn-detail:focus,
-.btn-detail.focus {
-    color: #fff;
-    background-color: #0e9250;
-    border-color: #0d8b51;
-    box-shadow: 0 0 0 0.2rem rgba(83, 225, 137, 0.5);
-}
-
-.btn-detail.disabled,
-.btn-detail:disabled {
-    color: #fff;
-    background-color: #149735;
-    border-color: #1a8b3c;
-}
-
-.btn-detail:not(:disabled):not(.disabled):active,
-.btn-detail:not(:disabled):not(.disabled).active,
-.show>.btn-detail.dropdown-toggle {
-    color: #fff;
-    background-color: #128134;
-    border-color: #0d8a3d;
-}
-
-.btn-detail:not(:disabled):not(.disabled):active:focus,
-.btn-detail:not(:disabled):not(.disabled).active:focus,
-.show>.btn-detail.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0.2rem rgba(83, 225, 142, 0.5);
-}
-
 .btn {
     display: inline-block;
     font-weight: 400;
