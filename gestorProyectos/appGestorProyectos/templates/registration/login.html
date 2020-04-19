@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block header %}
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0">INICIO DE SESIÓN</h1>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main %}
+    <h2>Autenticación</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+
+        <input type="submit" value="Login">
+    </form>
+{% endblock %}
+

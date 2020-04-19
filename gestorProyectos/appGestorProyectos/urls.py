@@ -1,10 +1,12 @@
 from django.urls import path
+from django.contrib.auth import login, logout
 from . import views
+
 
 urlpatterns = [
     #HOME
     path('home/', views.ProyectosListView.as_view(), name='home'),
-    path('login/', views.LoginView.as_view(), name='login'),
+
     #PROYECTOS
     path('nuevo_proyecto/', views.CrearProyectoView.as_view(), name='proyecto_form'),
     path('proyectos/', views.ProyectoListView.as_view(), name='proyecto_list'),

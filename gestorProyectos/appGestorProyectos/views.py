@@ -4,6 +4,8 @@ from django.views import View
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
 from .forms import ProyectoForm, TareaForm, EmpleadoForm
 from .models import Empleado, Proyecto, Tarea
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # HOME
@@ -130,7 +132,7 @@ class TareaUpdateView(UpdateView):
 
 
 # EMPLEADOS
-class EmpleadoCreateView(CreateView):
+class EmpleadoCreateView(LoginRequiredMixin, CreateView):
     model = Empleado
     form_class = EmpleadoForm
     template_name = 'empleado_form.html'
@@ -160,13 +162,13 @@ class EmpleadoListView(ListView):
         return context
 
 
-class EmpleadoDeleteView(DeleteView):
+class EmpleadoDeleteView(LoginRequiredMixin, DeleteView):
     model = Empleado
     template_name = "empleado_delete.html"
     success_url = reverse_lazy('empleado_list')
 
 
-class EmpleadoUpdateView(UpdateView):
+class EmpleadoUpdateView(LoginRequiredMixin, UpdateView):
     model = Empleado
     form_class = EmpleadoForm
     template_name = "empleado_update.html"
