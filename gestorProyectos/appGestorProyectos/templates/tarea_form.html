@@ -11,11 +11,9 @@
 {% endblock %}
 
 {% block main %}
-
 <br>
 <form method="post" class="list-group-horizontal">
     {% csrf_token %}
-
     <div class="form-group">
         <label class="col-sm-2 control-label">{{ form.nombre.label }}</label>
         <div class="col-sm-8">
@@ -66,12 +64,10 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-8">
-            <a class="btn btn-dark" href="{% url 'tarea_list' %}">Atras</a>
+            <a class="btn btn-danger" href="{% url 'tarea_list' %}">Cancelar</a>
             <input class="btn btn-primary pull-right" type="submit" name="submit" value="Nueva tarea">
         </div>
 
     </div>
-
 </form>
-
 {% endblock %}

@@ -15,7 +15,6 @@
 <br>
 <form method="post" class="list-group-horizontal">
     {% csrf_token %}
-
     <div class="form-group">
         <label class="col-sm-2 control-label">{{ form.nombre.label }}</label>
         <div class="col-sm-8">
@@ -70,7 +69,7 @@
             {{ form.telefono_cliente }}
         </div>
     </div>
-        <div class="form-group">
+       <div class="form-group">
         <label class="col-sm-2 control-label">{{ form.tarea.label }}</label>
         <div class="col-sm-8">
             {{ form.tarea }}
@@ -85,12 +84,10 @@
 
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-8">
-            <a class="btn btn-dark" href="{% url 'proyecto_list' %}">Atras</a>
+            <a class="btn btn-danger" href="{% url 'proyecto_list' %}">Cancelar</a>
             <input class="btn btn-primary pull-right" type="submit" name="submit" value="Nuevo proyecto">
         </div>
 
     </div>
-
 </form>
-
 {% endblock %}

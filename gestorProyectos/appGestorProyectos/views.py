@@ -19,7 +19,6 @@ class ProyectosListView(ListView):
         context['titulo_pagina'] = 'TUS PROYECTOS'
         return context
 
-
 # PROYECTOS
 class ProyectoCreateView(LoginRequiredMixin, CreateView):
     model = Proyecto

@@ -44,7 +44,7 @@ class Proyecto(models.Model):
     apellidos_cliente = models.CharField(max_length=50, default="")
     email_cliente = models.EmailField(max_length=100, default="")
     telefono_cliente = models.IntegerField(default=0)
-    tarea = models.ForeignKey(Tarea, on_delete=models.CASCADE)
+    tarea = models.ManyToManyField(Tarea)
     responsable = models.ForeignKey(Empleado, on_delete=models.CASCADE)
 
     def __str__(self):
