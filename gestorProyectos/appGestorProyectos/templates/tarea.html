@@ -1,8 +1,18 @@
-{% extends "base.html" %}
+{% extends 'index.html' %}
 
-{% block contenido %}
+{% load static %}
 
-<table>
+{% block header %}
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0">Detalles del empleado</h1>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main %}
+
+<table class="table">
     <tr>
         <td>ID</td>
         <td>{{ tarea.id }}</td>
@@ -40,9 +50,8 @@
         <td>{{ tarea.estado_tarea }}</td>
     </tr>
 </table>
-<a href="{% url 'tarea_list' %}">Atras</a> </td>
+<a class="btn btn-dark" href="{% url 'empleado_list' %}">Atras</a>
+
 <br>
-<a href="{% url 'tarea_delete' tarea.id %}">Eliminar Tarea</a> </td>
-<br>
-<a href="{% url 'tarea_update' tarea.id %}">Modificar Tarea</a> </td>
+
 {% endblock %}

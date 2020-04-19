@@ -1,8 +1,18 @@
-{% extends "base.html" %}
+{% extends 'index.html' %}
 
-{% block contenido %}
+{% load static %}
 
-<table>
+{% block header %}
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0">Detalles del proyecto</h1>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main %}
+
+<table class="table">
     <tr>
         <td>ID</td>
         <td>{{ proyecto.id }}</td>
@@ -50,12 +60,9 @@
         <td>Teléfono del cliente</td>
         <td>{{ proyecto.telefono_cliente }}</td>
     </tr>
-
 </table>
-<a href="{% url 'proyecto_list' %}">Atras</a> </td>
+<a class="btn btn-dark" href="{% url 'empleado_list' %}">Atras</a>
+
 <br>
-<a href="{% url 'proyecto_delete' proyecto.id %}">Eliminar Proyecto</a> </td>
-<br>
-<a href="{% url 'proyecto_update' proyecto.id %}">Modificar Proyecto</a> </td>
 
 {% endblock %}
