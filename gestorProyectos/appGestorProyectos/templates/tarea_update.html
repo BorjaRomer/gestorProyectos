@@ -1,9 +1,77 @@
-{% extends "base.html" %}
+{% extends 'index.html' %}
 
-{% block contenido %}
-<form method="post">
+{% load static %}
+
+{% block header %}
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0">Modificar tarea</h1>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main %}
+
+<br>
+<form method="post" class="list-group-horizontal">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Modificar">
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ form.nombre.label }}</label>
+        <div class="col-sm-8">
+            {{ form.nombre }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ form.descripcion.label }}</label>
+        <div class="col-sm-8">
+            {{ form.descripcion }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ form.fecha_inicio.label }}</label>
+        <div class="col-sm-8">
+            {{ form.fecha_inicio }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ form.fecha_fin.label }}</label>
+        <div class="col-sm-8">
+            {{ form.fecha_fin }}
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="col-sm-2 control-label">{{ form.responsable.label }}</label>
+        <div class="col-sm-8">
+            {{ form.responsable }}
+        </div>
+    </div>
+            <div class="form-group">
+        <label class="col-sm-2 control-label">{{ form.nivel_prioridad.label }}</label>
+        <div class="col-sm-8">
+            {{ form.nivel_prioridad }}
+        </div>
+    </div>
+            <div class="form-group">
+        <label class="col-sm-2 control-label">{{ form.notas.label }}</label>
+        <div class="col-sm-8">
+            {{ form.notas }}
+        </div>
+    </div>
+            <div class="form-group">
+        <label class="col-sm-2 control-label">{{ form.estado_tarea.label }}</label>
+        <div class="col-sm-8">
+            {{ form.estado_tarea }}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-8">
+            <a class="btn btn-dark" href="{% url 'tarea_list' %}">Atras</a>
+            <input class="btn btn-primary pull-right" type="submit" name="submit" value="Guardar cambios">
+        </div>
+
+    </div>
+
 </form>
+
 {% endblock %}

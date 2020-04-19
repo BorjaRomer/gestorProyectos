@@ -22,24 +22,13 @@ class ProyectosListView(ListView):
 
 
 # PROYECTOS
-class CrearProyectoView(View):
+class ProyectoCreateView(LoginRequiredMixin, CreateView):
+    model = Proyecto
+    form_class = ProyectoForm
+    template_name = 'proyecto_form.html'
 
-    def get(self, request, *args, **kwargs):
-        form = ProyectoForm
-        context = {
-            'form': form,
-            'titulo_pagina': 'Crear un nuevo proyecto'
-        }
-        return render(request, 'proyecto_form.html', context)
-
-    def post(self, request, *args, **kwargs):
-        form = ProyectoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            # Volvemos a la lista de proyectos
-            return redirect('proyecto_list')
-
-        return render(request, 'proyecto_form.html', {'form': form})
+    def get_success_url(self):
+        return reverse('proyecto_list')
 
 
 class ProyectoDetailView(DetailView):
@@ -63,13 +52,13 @@ class ProyectoListView(ListView):
         return context
 
 
-class ProyectoDeleteView(DeleteView):
+class ProyectoDeleteView(LoginRequiredMixin, DeleteView):
     model = Proyecto
     template_name = "proyecto_delete.html"
     success_url = reverse_lazy('proyecto_list')
 
 
-class ProyectoUpdateView(UpdateView):
+class ProyectoUpdateView(LoginRequiredMixin, UpdateView):
     model = Proyecto
     form_class = ProyectoForm
     template_name = "proyecto_update.html"
@@ -77,24 +66,13 @@ class ProyectoUpdateView(UpdateView):
 
 
 # TAREAS
-class CrearTareaView(View):
+class TareaCreateView(LoginRequiredMixin, CreateView):
+    model = Tarea
+    form_class = TareaForm
+    template_name = 'tarea_form.html'
 
-    def get(self, request, *args, **kwargs):
-        form = TareaForm
-        context = {
-            'form': form,
-            'titulo_pagina': 'Crear una nueva tarea'
-        }
-        return render(request, 'tarea_form.html', context)
-
-    def post(self, request, *args, **kwargs):
-        form = TareaForm(request.POST)
-        if form.is_valid():
-            form.save()
-            # Volvemos a la lista de tareas
-            return redirect('tarea_list')
-
-        return render(request, 'tarea_form.html', {'form': form})
+    def get_success_url(self):
+        return reverse('tarea_list')
 
 
 class TareaDetailView(DetailView):
@@ -118,13 +96,13 @@ class TareaListView(ListView):
         return context
 
 
-class TareaDeleteView(DeleteView):
+class TareaDeleteView(LoginRequiredMixin, DeleteView):
     model = Tarea
     template_name = "tarea_delete.html"
     success_url = reverse_lazy('tarea_list')
 
 
-class TareaUpdateView(UpdateView):
+class TareaUpdateView(LoginRequiredMixin, UpdateView):
     model = Tarea
     form_class = TareaForm
     template_name = "tarea_update.html"

@@ -8,13 +8,13 @@ urlpatterns = [
     path('home/', views.ProyectosListView.as_view(), name='home'),
 
     #PROYECTOS
-    path('nuevo_proyecto/', views.CrearProyectoView.as_view(), name='proyecto_form'),
+    path('nuevo_proyecto/', views.ProyectoCreateView.as_view(), name='proyecto_form'),
     path('proyectos/', views.ProyectoListView.as_view(), name='proyecto_list'),
     path('proyecto/<int:pk>/', views.ProyectoDetailView.as_view(), name='proyecto'),
     path('proyecto/<int:pk>/delete/', views.ProyectoDeleteView.as_view(), name='proyecto_delete'),
     path('proyecto/<int:pk>/update/', views.ProyectoUpdateView.as_view(), name='proyecto_update'),
     #TAREAS
-    path('nueva_tarea/', views.CrearTareaView.as_view(), name='tarea_form'),
+    path('nueva_tarea/', views.TareaCreateView.as_view(), name='tarea_form'),
     path('tareas/', views.TareaListView.as_view(), name='tarea_list'),
     path('tarea/<int:pk>/', views.TareaDetailView.as_view(), name='tarea'),
     path('tarea/<int:pk>/delete/', views.TareaDeleteView.as_view(), name='tarea_delete'),
