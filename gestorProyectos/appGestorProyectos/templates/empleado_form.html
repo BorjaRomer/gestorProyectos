@@ -1,6 +1,17 @@
 {% extends 'index.html' %}
+
 {% load static %}
+
+{% block header %}
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0">Nuevo empleado</h1>
+        </div>
+    </header>
+{% endblock %}
+
 {% block main %}
+
 <br>
 <form method="post" class="list-group-horizontal">
     {% csrf_token %}
