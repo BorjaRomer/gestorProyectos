@@ -12,8 +12,17 @@ class ProyectoForm(ModelForm):
         model = Proyecto
         fields = '__all__'
         widgets = {
+            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+            'descripcion': forms.TextInput(attrs={'class': 'form-control'}),
             'fecha_inicio': DateInput(),
-            'fecha_fin': DateInput()
+            'fecha_fin': DateInput(),
+            'presupuesto': forms.NumberInput(attrs={'class': 'form-control'}),
+            'nombre_cliente': forms.TextInput(attrs={'class': 'form-control'}),
+            'apellidos_cliente': forms.TextInput(attrs={'class': 'form-control'}),
+            'email_cliente': forms.EmailInput(attrs={'class': 'form-control'}),
+            'telefono_cliente': forms.NumberInput(attrs={'class': 'form-control'}),
+            'tarea': forms.SelectMultiple(attrs={'class': 'form-control'}),
+            #responsable
         }
 
 
@@ -22,8 +31,14 @@ class TareaForm(ModelForm):
         model = Tarea
         fields = '__all__'
         widgets = {
+            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+            'descripcion': forms.TextInput(attrs={'class': 'form-control'}),
             'fecha_inicio': DateInput(),
-            'fecha_fin': DateInput()
+            'fecha_fin': DateInput(),
+            #responsable
+            'nivel_prioridad': forms.NumberInput(attrs={'class': 'form-control'}),
+            'notas': forms.TextInput(attrs={'class': 'form-control'}),
+            #estado_tarea
         }
 
 
