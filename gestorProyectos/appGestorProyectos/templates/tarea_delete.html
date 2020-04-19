@@ -1,9 +1,24 @@
-{% extends "base.html" %}
+{% extends 'index.html' %}
+{% load static %}
 
-{% block contenido %}
-<form method="post">
+{% block header %}
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0">Eliminar empleado</h1>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main %}
+<br>
+<form method="post" class="list-group-horizontal">
     {% csrf_token %}
-    <p>¿Estas seguro de eliminar la tarea: {{ tarea.nombre }}?</p>
-    <input type="submit" value="Confirmar">
+    <p class="text-danger">¿Estas seguro de eliminar la tarea {{ tarea.nombre }}?</p>
+    <div class="form-group">
+        <div class="col-sm-2 col-sm-8">
+            <input class="btn btn-danger pull-right" type="submit" value="Eliminar">
+        </div>
+    </div>
+
 </form>
 {% endblock %}
