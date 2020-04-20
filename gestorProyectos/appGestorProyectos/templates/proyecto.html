@@ -44,24 +44,6 @@
     </tr>
 
     <tr>
-        <td>Tareas</td>
-        <td>
-            <ul>{% for tarea in object.tarea.all %}
-                <li><a href="{% url 'tarea' tarea.id %}">{{ tarea.nombre }}{% endfor %}</a></li>
-            </ul>
-        </td>
-    </tr>
-
-    <tr>
-        <td>Responsable</td>
-        <td>
-            <ul>{% for tarea in object.tarea.all %}
-                <li><a href="{% url 'tarea' tarea.id %}">{{ tarea.responsable }}{% endfor %}</a></li>
-            </ul>
-        </td>
-    </tr>
-
-    <tr>
         <td>Nombre del cliente</td>
         <td>{{ proyecto.nombre_cliente }}</td>
     </tr>
@@ -80,6 +62,29 @@
         <td>Teléfono del cliente</td>
         <td>{{ proyecto.telefono_cliente }}</td>
     </tr>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tarea</th>
+                <th>Responsable</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <ul>{% for tarea in object.tarea.all %}
+                        <li><a href="{% url 'tarea' tarea.id %}">{{ tarea.nombre }}{% endfor %}</a></li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>{% for tarea in object.tarea.all %}
+                        <li><a href="{% url 'tarea' tarea.id %}">{{ tarea.responsable }}{% endfor %}</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
 </table>
 
