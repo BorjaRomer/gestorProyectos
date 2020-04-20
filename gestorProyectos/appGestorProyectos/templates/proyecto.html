@@ -41,7 +41,7 @@
     <tr>
         <td>Tareas</td>
         {% for tarea in object.tarea.all %}
-        <td>{{ tarea.nombre }}</td>
+        <td><a href="{% url 'tarea' tarea.id %}">{{ tarea.nombre }}</a> </td>
         {% endfor %}
     </tr>
 
