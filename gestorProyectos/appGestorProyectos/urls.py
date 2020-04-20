@@ -1,6 +1,8 @@
 from django.urls import path
 from django.contrib.auth import login, logout
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -25,4 +27,4 @@ urlpatterns = [
     path('empleado/<int:pk>/', views.EmpleadoDetailView.as_view(), name='empleado'),
     path('empleado/<int:pk>/delete/', views.EmpleadoDeleteView.as_view(), name='empleado_delete'),
     path('empleado/<int:pk>/update/', views.EmpleadoUpdateView.as_view(), name='empleado_update'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

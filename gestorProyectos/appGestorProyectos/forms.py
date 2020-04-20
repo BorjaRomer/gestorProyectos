@@ -36,7 +36,7 @@ class TareaForm(ModelForm):
             'fecha_inicio': DateInput(),
             'fecha_fin': DateInput(),
             #responsable
-            'nivel_prioridad': forms.NumberInput(attrs={'class': 'form-control'}),
+            #nivel_prioridad
             'notas': forms.TextInput(attrs={'class': 'form-control'}),
             #estado_tarea
         }

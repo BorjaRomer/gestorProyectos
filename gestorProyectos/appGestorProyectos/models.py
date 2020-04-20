@@ -8,6 +8,7 @@ class Empleado(models.Model):
     apellidos = models.CharField(max_length=150)
     email = models.EmailField(max_length=254)
     telefono = models.IntegerField(default=0)
+    imagen = models.ImageField(upload_to='foto_perfil', blank=True)
 
     def __str__(self):
         return f"{self.nombre}"
@@ -19,7 +20,14 @@ class Tarea(models.Model):
     fecha_inicio = models.DateField(("Date"), default=date.today)
     fecha_fin = models.DateField(("Date"), default=date.today)
     responsable = models.ForeignKey(Empleado, on_delete=models.CASCADE, default="")
-    nivel_prioridad = models.IntegerField(default=0)
+    prioridad_tarea_choices = (
+        ('', ''),
+        ('Urgente', 'Urgente'),
+        ('Alta', 'Alta'),
+        ('Moderada', 'Moderada'),
+        ('Baja', 'Baja'),
+    )
+    nivel_prioridad = models.CharField(choices=prioridad_tarea_choices, default='', max_length=20)
     notas = models.TextField(max_length=300)
     estado_tarea_choices = (
         ('', ''),
