@@ -17,22 +17,27 @@
         <td>ID</td>
         <td>{{ proyecto.id }}</td>
     </tr>
+
     <tr>
         <td>Nombre</td>
         <td>{{ proyecto.nombre }}</td>
     </tr>
+
     <tr>
         <td>Descripción</td>
         <td>{{ proyecto.descripcion }}</td>
     </tr>
+
     <tr>
         <td>Fecha de inicio</td>
         <td>{{ proyecto.fecha_inicio }}</td>
     </tr>
+
     <tr>
         <td>Fecha de finalización</td>
         <td>{{ proyecto.fecha_fin }}</td>
     </tr>
+
     <tr>
         <td>Presupuesto</td>
         <td>{{ proyecto.presupuesto }}</td>
@@ -45,33 +50,39 @@
                 <li><a href="{% url 'tarea' tarea.id %}">{{ tarea.nombre }}{% endfor %}</a></li>
             </ul>
         </td>
-
     </tr>
+
     <tr>
         <td>Responsable</td>
         <td>
             <ul>{% for tarea in object.tarea.all %}
-                <li><a href="{% url 'tarea' tarea.id %}">{{ tarea.nombre }}{% endfor %}</a></li>
+                <li><a href="{% url 'tarea' tarea.id %}">{{ tarea.responsable }}{% endfor %}</a></li>
             </ul>
         </td>
     </tr>
+
     <tr>
         <td>Nombre del cliente</td>
         <td>{{ proyecto.nombre_cliente }}</td>
     </tr>
+
     <tr>
         <td>Apellidos del cliente</td>
         <td>{{ proyecto.apellidos_cliente }}</td>
     </tr>
+
     <tr>
         <td>Email del cliente</td>
         <td>{{ proyecto.email_cliente }}</td>
     </tr>
+
     <tr>
         <td>Teléfono del cliente</td>
         <td>{{ proyecto.telefono_cliente }}</td>
     </tr>
+
 </table>
+
 <a class="btn btn-dark" href="{% url 'proyecto_list' %}">Atras</a>
 
 <br>
