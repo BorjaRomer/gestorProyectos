@@ -27,4 +27,4 @@ urlpatterns = [
     path('empleado/<int:pk>/', views.EmpleadoDetailView.as_view(), name='empleado'),
     path('empleado/<int:pk>/delete/', views.EmpleadoDeleteView.as_view(), name='empleado_delete'),
     path('empleado/<int:pk>/update/', views.EmpleadoUpdateView.as_view(), name='empleado_update'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]

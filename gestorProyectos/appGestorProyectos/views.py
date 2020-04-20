@@ -124,6 +124,7 @@ class EmpleadoCreateView(LoginRequiredMixin, CreateView):
     model = Empleado
     form_class = EmpleadoForm
     template_name = 'empleado_form.html'
+    queryset = Empleado.objects.all()
 
     def get_success_url(self):
         return reverse('empleado_list')

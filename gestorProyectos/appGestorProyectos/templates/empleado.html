@@ -35,7 +35,11 @@
     </tr>
     <tr>
         <td>Foto de perfil</td>
-        <td><img src="{{ empleado.imagen.url }}" width="240"> </td>
+        {% if empleado.image %}
+            <td><img src="{{ empleado.imagen.url }}" width="240"> </td>
+        {% else %}
+            <td><img src="{% static 'img/cabin.png' %}" width="240"></td>
+        {% endif %}
     </tr>
 
 </table>
