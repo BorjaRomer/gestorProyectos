@@ -49,7 +49,11 @@
     </tr>
     <tr>
         <td>Responsable</td>
-        <td>{{ proyecto.responsable }}</td>
+        <td>
+            <ul>{% for tarea in object.tarea.all %}
+                <li><a href="{% url 'tarea' tarea.id %}">{{ tarea.nombre }}{% endfor %}</a></li>
+            </ul>
+        </td>
     </tr>
     <tr>
         <td>Nombre del cliente</td>
@@ -73,9 +77,4 @@
 <br>
 
 {% endblock %}
-<!--
-    <tr>
-        <td>Tareas</td>
-        <td>{{ proyecto.tarea }}</td>
-    </tr>
--->
+
