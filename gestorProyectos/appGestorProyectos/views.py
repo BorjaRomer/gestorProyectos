@@ -20,6 +20,17 @@ class ProyectosListView(ListView):
         return context
 
 
+# CLIENTE
+class ClienteDetailView(DetailView):
+    model = Proyecto
+    template_name = 'cliente.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ClienteDetailView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Detalles del cliente'
+        return context
+
+
 # PROYECTOS
 class ProyectoCreateView(LoginRequiredMixin, CreateView):
     model = Proyecto
@@ -37,16 +48,6 @@ class ProyectoDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(ProyectoDetailView, self).get_context_data(**kwargs)
         context['titulo_pagina'] = 'Detalles del proyecto'
-        return context
-
-
-class ClienteDetailView(DetailView):
-    model = Proyecto
-    template_name = 'cliente.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(ClienteDetailView, self).get_context_data(**kwargs)
-        context['titulo_pagina'] = 'Detalles del cliente'
         return context
 
 
