@@ -37,10 +37,14 @@
         <td>Presupuesto</td>
         <td>{{ proyecto.presupuesto }}</td>
     </tr>
+
     <tr>
         <td>Tareas</td>
-        <td>{{ proyecto.tarea }}</td>
+        {% for tarea in object.tarea.all %}
+        <td>{{ tarea.nombre }}</td>
+        {% endfor %}
     </tr>
+
     <tr>
         <td>Responsable</td>
         <td>{{ proyecto.responsable }}</td>
@@ -67,3 +71,9 @@
 <br>
 
 {% endblock %}
+<!--
+    <tr>
+        <td>Tareas</td>
+        <td>{{ proyecto.tarea }}</td>
+    </tr>
+-->
