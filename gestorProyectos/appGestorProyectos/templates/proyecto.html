@@ -45,22 +45,7 @@
 
     <tr>
         <td>Nombre del cliente</td>
-        <td>{{ proyecto.nombre_cliente }}</td>
-    </tr>
-
-    <tr>
-        <td>Apellidos del cliente</td>
-        <td>{{ proyecto.apellidos_cliente }}</td>
-    </tr>
-
-    <tr>
-        <td>Email del cliente</td>
-        <td>{{ proyecto.email_cliente }}</td>
-    </tr>
-
-    <tr>
-        <td>Teléfono del cliente</td>
-        <td>{{ proyecto.telefono_cliente }}</td>
+        <td><a href="{% url 'cliente' proyecto.id %}">{{ proyecto.nombre_cliente }}</a></td>
     </tr>
 
     <table class="table">

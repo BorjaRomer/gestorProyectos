@@ -12,6 +12,7 @@ urlpatterns = [
     path('proyecto/<int:pk>/', views.ProyectoDetailView.as_view(), name='proyecto'),
     path('proyecto/<int:pk>/delete/', views.ProyectoDeleteView.as_view(), name='proyecto_delete'),
     path('proyecto/<int:pk>/update/', views.ProyectoUpdateView.as_view(), name='proyecto_update'),
+    path('proyecto/<int:pk>/cliente/', views.ClienteDetailView.as_view(), name='cliente'),
     #TAREAS
     path('nueva_tarea/', views.TareaCreateView.as_view(), name='tarea_form'),
     path('tareas/', views.TareaListView.as_view(), name='tarea_list'),

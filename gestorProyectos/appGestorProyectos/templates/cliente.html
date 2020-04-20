@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block header %}
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0">Detalles del proyecto {{ proyecto.nombre }}</h1>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main %}
+
+<table class="table">
+
+    <tr>
+        <td>Nombre del cliente</td>
+        <td>{{ proyecto.nombre_cliente }}</td>
+    </tr>
+
+    <tr>
+        <td>Apellidos del cliente</td>
+        <td>{{ proyecto.apellidos_cliente }}</td>
+    </tr>
+
+    <tr>
+        <td>Email del cliente</td>
+        <td>{{ proyecto.email_cliente }}</td>
+    </tr>
+
+    <tr>
+        <td>Teléfono del cliente</td>
+        <td>{{ proyecto.telefono_cliente }}</td>
+    </tr>
+
+
+
+</table>
+
+<a class="btn btn-dark" href="javascript: history.go(-1)">Atras</a>
+
+<br>
+
+{% endblock %}
