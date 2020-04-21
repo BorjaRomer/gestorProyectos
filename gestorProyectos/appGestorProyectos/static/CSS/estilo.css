@@ -7161,6 +7161,7 @@ button.bg-dark:focus {
 
 .flex-column {
     flex-direction: column !important;
+    margin-bottom: 30px;
 }
 
 .flex-row-reverse {
@@ -10370,7 +10371,7 @@ form .row:first-child .floating-label-form-group {
     background-color: #1a252f;
 }
 
-/*Empieza el CSS para la vista dee proyecto.html*/
+/*Empieza el CSS para la vista de proyecto.html*/
 #principal {
     background-color: white;
     height: 600px;
@@ -10391,7 +10392,7 @@ form .row:first-child .floating-label-form-group {
 
 #tarjeta_up {
     height: 10%;
-    background-color: rgb(122, 156, 122);
+    background-color: #427967;
     border-bottom: 2px solid rgb(33, 58, 33);
     border-radius: 10px 10px 0px 0px;
 }
@@ -10400,7 +10401,7 @@ form .row:first-child .floating-label-form-group {
     font-size: 23px;
     letter-spacing: 8px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #212529;
+    color: white;
     margin: 15px 0px 0px 30px;
     float: left;
 }
@@ -10534,4 +10535,8 @@ form .row:first-child .floating-label-form-group {
     height: 30px;
     float: right;
     margin: 10px 20px 0px 0px;
+}
+
+.presupuesto {
+    margin: 20px 0px 10px 20px;
 }
