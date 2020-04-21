@@ -7,7 +7,7 @@ from . import views
 
 urlpatterns = [
     #HOME
-    path('home/', views.ProyectosListView.as_view(), name='home'),
+    path('', views.ProyectosListView.as_view(), name='home'),
     #PROYECTOS
     path('nuevo_proyecto/', views.ProyectoCreateView.as_view(), name='proyecto_form'),
     path('proyectos/', views.ProyectoListView.as_view(), name='proyecto_list'),
