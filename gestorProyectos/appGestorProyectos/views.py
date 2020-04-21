@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
 from django.views import View
@@ -124,6 +125,12 @@ class EmpleadoCreateView(LoginRequiredMixin, CreateView):
     model = Empleado
     form_class = EmpleadoForm
     template_name = 'empleado_form.html'
+
+    def upload_file(request):
+        if request.method == 'POST':
+            form = EmpleadoForm(request.POST, request.FILES)
+            if form.is_valid():
+                return HttpResponseRedirect('empleado_list')
 
     def get_success_url(self):
         return reverse('empleado_list')
