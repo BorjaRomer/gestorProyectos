@@ -10361,3 +10361,169 @@ form .row:first-child .floating-label-form-group {
 .copyright {
     background-color: #1a252f;
 }
+
+/*Empieza el CSS de proyecto.html*/
+#principal {
+    background-color: white;
+    height: 600px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tarjeta_alta {
+    height: 500px;
+    width: 850px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid rgb(33, 58, 33);
+    box-shadow: 5px 5px 10px #666;
+}
+
+#tarjeta_up {
+    height: 10%;
+    background-color: rgb(122, 156, 122);
+    border-bottom: 2px solid rgb(33, 58, 33);
+    border-radius: 10px 10px 0px 0px;
+}
+
+#titulo_tarjeta {
+    font-size: 23px;
+    letter-spacing: 8px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #555555;
+    margin: 15px 0px 0px 30px;
+    float: left;
+}
+
+#editar {
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin: 12px 25px 0px 0px;
+}
+
+#tarjeta_down {
+    height: 90%;
+}
+
+#tarjeta_down_titulo {
+    width: 850px;
+    height: 100px;
+}
+
+#tarjeta_down_titulo img {
+    width: 160px;
+    height: 90px;
+    float: left;
+    margin: 10px 0px 0px 15px;
+}
+
+#tarjeta_down_titulo h3 {
+    display: inline-block;
+    text-align: center;
+    width: 670px;
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+#izquierda {
+    height: 290px;
+    width: 30%;
+    float: left;
+    margin-top: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(51, 51, 51);
+}
+
+#izquierda h4 {
+    text-align: left;
+    margin: 20px 0px 10px 20px;
+}
+
+#participantes {
+    margin: 0px 0px 20px 40px;
+}
+
+#participantes li {
+    padding-bottom: 5px;
+}
+
+#imagen_progreso {
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin: auto;
+}
+
+#derecha {
+    float: right;
+    width: 70%;
+    height: 300px;
+}
+
+#derecha_nombre {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#derecha_p1 {
+    margin: 0px 140px 0px 140px;
+    border-bottom: 1px solid black;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+#derecha_p2 {
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-top: 5px;
+    letter-spacing: 2px;
+}
+
+#derecha_fechas {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fechas {
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 2px;
+    margin: 20px 20px 0px 20px;
+}
+
+#derecha_descripcion {
+    margin: 40px 20px 0px 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#derecha_descripcion p {
+    text-align: justify;
+}
+
+#next {
+    margin-top: 300px;
+    width: 100%;
+    height: 48px;
+}
+
+#img_atras {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: 10px 0px 0px 20px;
+}
+
+#img_adelante {
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin: 10px 20px 0px 0px;
+}
