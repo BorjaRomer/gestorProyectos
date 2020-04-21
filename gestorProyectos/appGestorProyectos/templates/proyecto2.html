@@ -15,7 +15,7 @@
     <article id="tarjeta_alta">
         <div id="tarjeta_up">
             <h3 id="titulo_tarjeta">CRProjects.com</h3>
-            <a href=""><img id="editar" src="{% static 'img/edit.PNG' %}" alt="editar"></a>
+            <a href="{% url 'proyecto_update' proyecto.id %}"><img id="editar" src="{% static 'img/edit.PNG' %}" alt="editar"></a>
         </div>
         <div id="tarjeta_down">
             <div id="tarjeta_down_titulo">
@@ -34,8 +34,8 @@
             </div>
             <div id="derecha">
                 <div id="derecha_nombre">
-                    <p id="derecha_p1">{{ proyecto.responsable }}</p>
-                    <p id="derecha_p2">Cliente: {{ proyecto.nombre_cliente }}</p>
+                    <p id="derecha_p1">Responsable del proyecto: {{ proyecto.responsable }}</p>
+                    <p id="derecha_p2">Cliente: <a href="{% url 'cliente' proyecto.id %}">{{ proyecto.nombre_cliente }}</a></p>
                 </div>
                 <div id="derecha_fechas">
                     <p class="fechas">Fecha de inicio: {{ proyecto.fecha_inicio }}</p>
@@ -43,8 +43,7 @@
                 </div>
                 <div id="derecha_descripcion">
                     <h4>Descripción:</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                    <p>{{ proyecto.descripcion }}</p>
                 </div>
             </div>
             <div id="next">
