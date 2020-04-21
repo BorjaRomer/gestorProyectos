@@ -10400,7 +10400,7 @@ form .row:first-child .floating-label-form-group {
     font-size: 23px;
     letter-spacing: 8px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #555555;
+    color: #212529;
     margin: 15px 0px 0px 30px;
     float: left;
 }
@@ -10487,7 +10487,7 @@ form .row:first-child .floating-label-form-group {
 
 #derecha_p2 {
     margin: 0;
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding-top: 5px;
     letter-spacing: 2px;
@@ -10501,9 +10501,9 @@ form .row:first-child .floating-label-form-group {
 }
 
 .fechas {
-    font-size: 16px;
+    font-size: 17px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     margin: 20px 20px 0px 20px;
 }
 
