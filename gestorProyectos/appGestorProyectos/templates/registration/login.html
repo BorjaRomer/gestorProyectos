@@ -10,17 +10,19 @@
 {% endblock %}
 
 {% block main %}
-    <form method="POST">
+<div class="container">
+    <div class="col-sm-6">
+        <form method="POST">
         {% csrf_token %}
         <br>
         <br>
-        <table>
-            {{ form.as_table }}
-        </table>
+            {{ form.as_p }}
         <br>
         <input class="btn btn-primary" type="submit" value="Login">
         <br>
         <br>
-    </form>
+        </form>
+    </div>
+</div>
 {% endblock %}
 
