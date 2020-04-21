@@ -10,14 +10,17 @@
 {% endblock %}
 
 {% block main %}
-    <h2>Autenticación</h2>
     <form method="POST">
         {% csrf_token %}
+        <br>
+        <br>
         <table>
             {{ form.as_table }}
         </table>
         <br>
         <input class="btn btn-primary" type="submit" value="Login">
+        <br>
+        <br>
     </form>
 {% endblock %}
 
