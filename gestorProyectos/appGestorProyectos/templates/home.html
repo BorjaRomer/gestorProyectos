@@ -5,7 +5,7 @@
     <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
             <!-- Masthead Avatar Image--><a href="{% url 'proyecto_list' %}"><img class="masthead-avatar mb-5" src="{% static 'img/principal.png' %}" alt="" /></a> <!-- Masthead Heading-->
-            <h1 class="masthead-heading text-uppercase mb-0">Gestor de proyectos</h1>
+            <h1 class="masthead-heading text-uppercase mb-0">CRProjects</h1>
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
@@ -20,10 +20,24 @@
 
 {% block main %}
 
-    {% for pro in listado_proyectos %}
-        <li>
-            {{ pro.id }}: {{ pro.nombre }} (<a href="{% url 'proyecto' pro.id %}">Ver</a>)
-        </li>
-    {% endfor %}
+    <div class="container">
+        <div class="row">
+            <!-- Footer Location-->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase mb-4">Proyectos</h4>
+                <a href="{% url 'proyecto_list' %}"><img width="240" src="https://es.unesco.org/youth/toptips/user/pages/images/home-feature-two_mobile.png"> </a>
+            </div>
+            <!-- Footer Social Icons-->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase mb-4">Tareas</h4>
+                <a href="{% url 'tarea_list' %}"><img width="240" src="https://sites.google.com/site/projectgbort/_/rsrc/1468874013501/home/tarea/TAREAS.jpeg"></a>
+            </div>
+            <!-- Footer About Text-->
+            <div class="col-lg-4">
+                <h4 class="text-uppercase mb-4">Empleados</h4>
+                <a href="{% url 'empleado_list' %}"><img width="240" src="https://pngimage.net/wp-content/uploads/2018/05/empleados-png-2.png"></a>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
