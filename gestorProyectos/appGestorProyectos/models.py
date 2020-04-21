@@ -8,7 +8,7 @@ class Empleado(models.Model):
     apellidos = models.CharField(max_length=150)
     email = models.EmailField(max_length=254)
     telefono = models.IntegerField(default=0)
-    imagen = models.ImageField(null=True, blank=True)
+    imagen = models.ImageField(upload_to="foto_perfil", null=True, blank=True)
 
     def __str__(self):
         return f"{self.nombre}"

@@ -34,12 +34,13 @@
         <td>{{ empleado.telefono }}</td>
     </tr>
     <tr>
+        <td>Foto de perfil</td>
         {% if empleado.imagen %}
-            <td>Foto de perfil</td>
             <td><img src="{{ empleado.imagen.url }}" width="240"> </td>
+        {% else %}
+            <td><img src="{% static 'img/SinFotoPerfil.jpg' %}" width="240"> </td>
         {% endif %}
     </tr>
-
 </table>
 <a class="btn btn-dark" href="javascript: history.go(-1)">Atras</a>
 <br>
