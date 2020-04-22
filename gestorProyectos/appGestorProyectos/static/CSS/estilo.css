@@ -10372,7 +10372,9 @@ form .row:first-child .floating-label-form-group {
     background-color: #1a252f;
 }
 
+
 /*Empieza el CSS para la vista de proyecto.html*/
+
 #principal {
     background-color: white;
     height: 600px;
@@ -10540,4 +10542,18 @@ form .row:first-child .floating-label-form-group {
 
 .presupuesto {
     margin: 20px 0px 10px 20px;
+}
+
+a {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+
+a:hover,
+a:focus {
+    background-size: 100% 2px;
 }
