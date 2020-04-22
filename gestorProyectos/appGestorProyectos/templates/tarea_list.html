@@ -40,6 +40,10 @@
                 <td><a class="btn btn-info" href="{% url 'tarea_update' tarea.id %}">Editar</a> </td>
                 <td><a class="btn btn-danger" href="{% url 'tarea_delete' tarea.id %}">Eliminar</a> </td>
             </tr>
+            {% empty %}
+            <tr>
+                <td>Aún no se ha creado ninguna tarea</td>
+            </tr>
             {% endfor %}
         </tbody>
     </table>

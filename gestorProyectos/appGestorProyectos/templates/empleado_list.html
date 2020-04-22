@@ -37,6 +37,10 @@
                 <td><a class="btn btn-info" href="{% url 'empleado_update' empleado.id %}">Editar</a> </td>
                 <td><a class="btn btn-danger" href="{% url 'empleado_delete' empleado.id %}">Eliminar</a> </td>
             </tr>
+            {% empty %}
+            <tr>
+                <td>Aún no existe ningún empleado</td>
+            </tr>
             {% endfor %}
         </tbody>
     </table>
