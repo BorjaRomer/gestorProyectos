@@ -26,7 +26,7 @@
                 <h4>Tareas:</h4>
                 <ul id="participantes">
                     {% for tarea in object.tarea.all %}
-                    <li><a href="{% url 'tarea' tarea.id %}">{{ tarea.nombre }}</a></li>
+                    <li><a class="subrayado"  href="{% url 'tarea' tarea.id %}">{{ tarea.nombre }}</a></li>
                     {% endfor %}
                 </ul>
 <!--                <img id="" src="" alt="progreso">-->
@@ -35,7 +35,7 @@
             <div id="derecha">
                 <div id="derecha_nombre">
                     <p id="derecha_p1">Responsable del proyecto: {{ proyecto.responsable }}</p>
-                    <p id="derecha_p2">Cliente: <a href="{% url 'cliente' proyecto.id %}">{{ proyecto.nombre_cliente }}</a></p>
+                    <p id="derecha_p2">Cliente: <a class="subrayado" href="{% url 'cliente' proyecto.id %}">{{ proyecto.nombre_cliente }}</a></p>
                 </div>
                 <div id="derecha_fechas">
                     <p class="fechas">Fecha de inicio: {{ proyecto.fecha_inicio }}</p>

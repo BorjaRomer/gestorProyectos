@@ -10544,7 +10544,7 @@ form .row:first-child .floating-label-form-group {
     margin: 20px 0px 10px 20px;
 }
 
-a {
+.subrayado {
     text-decoration: none;
     background-image: linear-gradient(currentColor, currentColor);
     background-position: 0% 100%;
@@ -10553,12 +10553,12 @@ a {
     transition: background-size .3s;
 }
 
-a:hover,
-a:focus {
+.subrayado:hover,
+.subrayado:focus {
     background-size: 100% 2px;
 }
-<<<<<<< HEAD
 
+<<<<<<< HEAD
 /*Empieza el CSS para la vista de login.html*/
 
 html {
@@ -10717,10 +10717,10 @@ input[type="submit"]:active {
 }
 
 .login_sect {
-     margin: 50px 0px 50px 0px;
+    margin: 50px 0px 50px 0px;
 }
 
-.label_login{
-    color:black;
+.label_login {
+    color: black;
     margin: 15px 0px 0px 30px;
 }
