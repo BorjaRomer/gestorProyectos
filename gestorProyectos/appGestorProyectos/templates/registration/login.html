@@ -10,17 +10,15 @@
 {% endblock %}
 
 {% block main %}
-<div class="container">
-    <div class="col-sm-6">
+<div class="login_sect">
+    <div class="login">
         <form method="POST">
         {% csrf_token %}
-        <br>
-        <br>
-            {{ form.as_p }}
-        <br>
+            <p class="label_login">Nombre de usuario:</p>
+            {{ form.username }}
+            <p class="label_login">Contraseña:</p>
+            {{ form.password }}
         <input class="btn btn-primary" type="submit" value="Login">
-        <br>
-        <br>
         </form>
     </div>
 </div>
