@@ -1,59 +1,53 @@
-{% extends 'index.html' %}
-
-{% load static %}
-
-{% block styles %}
+{% extends 'index.html' %} {% load static %} {% block styles %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link href="{% static 'css/empleado_list.css' %}" rel="stylesheet" />
-{% endblock %}
-
-{% block header %}
-    <header class="masthead bg-primary text-white text-center">
-        <div class="container d-flex align-items-center flex-column">
-            <h1 class="masthead-heading text-uppercase mb-0">Lista de empleados</h1>
-        </div>
-    </header>
-{% endblock %}
-
-{% block main %}
+<link href="{% static 'css/empleado_list.css' %}" rel="stylesheet" /> {% endblock %} {% block header %}
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="masthead-heading text-uppercase mb-0">Lista de empleados</h1>
+    </div>
+</header>
+{% endblock %} {% block main %}
+<br>
+<br>
+<a style="margin-left: 400px; font-weight: bold; text-transform: uppercase;" class="btn btn-warning" href="{% url 'empleado_form' %}">Nuevo empleado</a>
+<br>
 <br>
 <div class="table-users">
-   <div class="header">Empleados</div>
+    <div class="header">Empleados</div>
 
-   <table cellspacing="0">
-       <thead>
-          <tr>
-              <th>Imagen</th>
-              <th>DNI</th>
-              <th>Nombre</th>
-              <th>Apellidos</th>
-              <th>Email</th>
-              <th>Telefono</th>
-              <th>Más acciones</th>
-          </tr>
-       </thead>
-       <tbody>
-          {% for empleado in empleado_list %}
-          <tr>
-              {% if empleado.imagen %}
-              <td><img src="{{ empleado.imagen.url }}"> </td>
-              {% else %}
-              <td><img src="{% static 'img/SinFotoPerfil.jpg' %}" width="240"> </td>
-              {% endif %}
-              <td>{{ empleado.dni }}</td>
-              <td>{{ empleado.nombre }}</td>
-              <td>{{ empleado.apellidos }}</td>
-              <td>{{ empleado.email }}</td>
-              <td>{{ empleado.telefono }}</td>
-              <td><a class="btn btn-warning" href="{% url 'empleado' empleado.id %}">Mostrar más</a></td>
-          </tr>
-          {% empty %}
-          <tr>
-              <td>Aún no existe ningún empleado</td>
-          </tr>
-          {% endfor %}
-       </tbody>
-   </table>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>DNI</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Más acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for empleado in empleado_list %}
+            <tr>
+                {% if empleado.imagen %}
+                <td><img src="{{ empleado.imagen.url }}"> </td>
+                {% else %}
+                <td><img src="{% static 'img/SinFotoPerfil.jpg' %}" width="240"> </td>
+                {% endif %}
+                <td>{{ empleado.dni }}</td>
+                <td>{{ empleado.nombre }}</td>
+                <td>{{ empleado.apellidos }}</td>
+                <td>{{ empleado.email }}</td>
+                <td>{{ empleado.telefono }}</td>
+                <td><a class="btn btn-warning" href="{% url 'empleado' empleado.id %}">Mostrar más</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td>Aún no existe ningún empleado</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
-<br>
-{% endblock %}
+<br> {% endblock %}
