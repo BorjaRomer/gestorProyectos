@@ -16,6 +16,7 @@
 {% endblock %}
 
 {% block main %}
+<br>
 <div class="table-users">
    <div class="header">Empleados</div>
 
@@ -28,7 +29,7 @@
               <th>Apellidos</th>
               <th>Email</th>
               <th>Telefono</th>
-              <th>Detalles</th>
+              <th>Más acciones</th>
           </tr>
        </thead>
        <tbody>
@@ -44,7 +45,7 @@
               <td>{{ empleado.apellidos }}</td>
               <td>{{ empleado.email }}</td>
               <td>{{ empleado.telefono }}</td>
-              <td><a class="btn btn-success" href="{% url 'empleado' empleado.id %}">Detalles</a></td>
+              <td><a class="btn btn-warning" href="{% url 'empleado' empleado.id %}">Mostrar más</a></td>
           </tr>
           {% empty %}
           <tr>
@@ -54,4 +55,5 @@
        </tbody>
    </table>
 </div>
+<br>
 {% endblock %}
