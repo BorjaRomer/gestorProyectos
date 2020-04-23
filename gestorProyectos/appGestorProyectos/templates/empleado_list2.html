@@ -28,6 +28,7 @@
               <th>Apellidos</th>
               <th>Email</th>
               <th>Telefono</th>
+              <th>Detalles</th>
           </tr>
        </thead>
        <tbody>
@@ -43,6 +44,7 @@
               <td>{{ empleado.apellidos }}</td>
               <td>{{ empleado.email }}</td>
               <td>{{ empleado.telefono }}</td>
+              <td><a class="btn btn-success" href="{% url 'empleado' empleado.id %}">Detalles</a></td>
           </tr>
           {% empty %}
           <tr>
