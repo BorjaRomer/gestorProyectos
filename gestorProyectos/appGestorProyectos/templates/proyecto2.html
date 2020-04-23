@@ -1,6 +1,9 @@
 {% extends 'index.html' %}
-
 {% load static %}
+
+{% block styles %}
+<link href="{% static 'css/proyecto.css' %}" rel="stylesheet" />
+{% endblock %}
 
 {% block header %}
     <header class="masthead bg-primary text-white text-center">
@@ -11,7 +14,6 @@
 {% endblock %}
 
 {% block main %}
-<link href="{% static 'css/proyecto.css' %}" rel="stylesheet" />
 <section id="principal">
     <article id="tarjeta_alta">
         <div id="tarjeta_up">

@@ -1,6 +1,10 @@
 {% extends 'index.html' %}
 {% load static %}
 
+{% block styles %}
+<link href="{% static 'css/login.css' %}" rel="stylesheet" />
+{% endblock %}
+
 {% block header %}
     <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
