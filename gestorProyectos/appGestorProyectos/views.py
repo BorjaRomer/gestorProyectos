@@ -44,7 +44,7 @@ class ProyectoCreateView(LoginRequiredMixin, CreateView):
 
 class ProyectoDetailView(DetailView):
     model = Proyecto
-    template_name = 'proyecto2.html'
+    template_name = 'proyecto.html'
 
     def get_context_data(self, **kwargs):
         context = super(ProyectoDetailView, self).get_context_data(**kwargs)
@@ -143,7 +143,7 @@ class EmpleadoDetailView(DetailView):
 class EmpleadoListView(ListView):
     model = Empleado
     queryset = Empleado.objects.order_by('nombre')
-    template_name = "empleado_list.html"
+    template_name = "empleado_list2.html"
 
     def get_context_data(self, **kwargs):
         context = super(EmpleadoListView, self).get_context_data(**kwargs)
