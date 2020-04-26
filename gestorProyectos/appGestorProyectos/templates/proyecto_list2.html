@@ -1,18 +1,45 @@
-{% extends 'index.html' %}
-{% load static %}
+{% extends 'index.html' %} {% load static %} {% block styles %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link href="{% static 'css/empleados_list.css' %}" rel="stylesheet" /> {% endblock %} {% block header %}
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="masthead-heading text-uppercase mb-0">Lista de proyectos</h1>
+    </div>
+</header>
+{% endblock %} {% block main %}
+<br>
+<div style="text-align: center;">
+    <a style="font-weight: bold; text-transform: uppercase;" class="btn btn-warning" href="{% url 'proyecto_form' %}">Nuevo proyecto</a>
+</div>
+<br>
+<div class="table-users">
+    <div class="header">Proyectos</div>
 
-{% block styles %}
-<link href="{% static 'css/proyecto_list.css' %}" rel="stylesheet" />
-{% endblock %}
-
-{% block header %}
-    <header class="masthead bg-primary text-white text-center">
-        <div class="container d-flex align-items-center flex-column">
-            <h1 class="masthead-heading text-uppercase mb-0">Lista de proyectos</h1>
-        </div>
-    </header>
-{% endblock %}
-
-{% block main %}
-
-{% endblock %}
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de entrega</th>
+                <th>Responsable</th>
+                <th>Más acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for proyecto in proyecto_list %}
+            <tr>
+                <td>{{ proyecto.nombre }}</td>
+                <td>{{ proyecto.fecha_inicio }}</td>
+                <td>{{ proyecto.fecha_fin }}</td>
+                <td>{{ proyecto.responsable }}</td>
+                <td><a class="btn btn-warning" href="{% url 'proyecto' proyecto.id %}">Mostrar más</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td>Aún no existe ningún proyecto</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<br> {% endblock %}

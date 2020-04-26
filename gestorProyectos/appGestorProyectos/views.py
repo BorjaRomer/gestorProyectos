@@ -52,7 +52,7 @@ class ProyectoDetailView(DetailView):
 class ProyectoListView(ListView):
     model = Proyecto
     queryset = Proyecto.objects.order_by('nombre')
-    template_name = "proyecto_list.html"
+    template_name = "proyecto_list2.html"
 
     def get_context_data(self, **kwargs):
         context = super(ProyectoListView, self).get_context_data(**kwargs)
