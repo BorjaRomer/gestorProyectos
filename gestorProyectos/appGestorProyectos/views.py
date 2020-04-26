@@ -1,7 +1,4 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
-from django.views import View
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
 from .forms import ProyectoForm, TareaForm, EmpleadoForm
 from .models import Empleado, Proyecto, Tarea
