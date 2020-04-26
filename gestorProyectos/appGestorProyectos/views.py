@@ -96,7 +96,7 @@ class TareaDetailView(DetailView):
 class TareaListView(ListView):
     model = Tarea
     queryset = Tarea.objects.order_by('nombre')
-    template_name = "tarea_list.html"
+    template_name = "tarea_list2.html"
 
     def get_context_data(self, **kwargs):
         context = super(TareaListView, self).get_context_data(**kwargs)
