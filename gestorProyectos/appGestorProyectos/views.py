@@ -52,7 +52,7 @@ class ProyectoDetailView(DetailView):
 class ProyectoListView(ListView):
     model = Proyecto
     queryset = Proyecto.objects.order_by('nombre')
-    template_name = "proyecto_list2.html"
+    template_name = "proyecto_list.html"
 
     def get_context_data(self, **kwargs):
         context = super(ProyectoListView, self).get_context_data(**kwargs)
@@ -96,7 +96,7 @@ class TareaDetailView(DetailView):
 class TareaListView(ListView):
     model = Tarea
     queryset = Tarea.objects.order_by('nombre')
-    template_name = "tarea_list2.html"
+    template_name = "tarea_list.html"
 
     def get_context_data(self, **kwargs):
         context = super(TareaListView, self).get_context_data(**kwargs)
@@ -140,7 +140,7 @@ class EmpleadoDetailView(DetailView):
 class EmpleadoListView(ListView):
     model = Empleado
     queryset = Empleado.objects.order_by('nombre')
-    template_name = "empleado_list2.html"
+    template_name = "empleado_list.html"
 
     def get_context_data(self, **kwargs):
         context = super(EmpleadoListView, self).get_context_data(**kwargs)

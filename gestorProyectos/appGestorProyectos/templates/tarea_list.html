@@ -1,32 +1,33 @@
-
 {% extends 'index.html' %}
 {% load static %}
-
-{% block header %}
-    <header class="masthead bg-primary text-white text-center">
-        <div class="container d-flex align-items-center flex-column">
-            <h1 class="masthead-heading text-uppercase mb-0">Lista de tareas</h1>
-        </div>
-    </header>
+{% block styles %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link href="{% static 'css/list.css' %}" rel="stylesheet" />
 {% endblock %}
-
+{% block header %}
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="masthead-heading text-uppercase mb-0">Lista de tareas</h1>
+    </div>
+</header>
+{% endblock %}
 {% block main %}
 <br>
+<div style="text-align: center;">
+    <a style="font-weight: bold; text-transform: uppercase;" class="btn btn-warning" href="{% url 'tarea_form' %}">Nueva tarea</a>
+</div>
 <br>
-<a class="btn btn-primary" href="{% url 'tarea_form' %}">Nueva tarea</a>
-<br>
-<br>
-<div>
-    <table class="table">
+<div class="table-users">
+    <div class="header">Tareas</div>
+
+    <table cellspacing="0">
         <thead>
             <tr>
                 <th>Nombre</th>
                 <th>Fecha de inicio</th>
-                <th>Fecha de fin</th>
+                <th>Fecha de entrega</th>
                 <th>Estado de la tarea</th>
-                <th>Detalles</th>
-                <th>Editar</th>
-                <th>Eliminar</th>
+                <th>Más acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -36,19 +37,14 @@
                 <td>{{ tarea.fecha_inicio }}</td>
                 <td>{{ tarea.fecha_fin }}</td>
                 <td>{{ tarea.estado_tarea }}</td>
-                <td><a class="btn btn-success" href="{% url 'tarea' tarea.id %}">Detalles</a> </td>
-                <td><a class="btn btn-info" href="{% url 'tarea_update' tarea.id %}">Editar</a> </td>
-                <td><a class="btn btn-danger" href="{% url 'tarea_delete' tarea.id %}">Eliminar</a> </td>
+                <td><a class="btn btn-warning" href="{% url 'tarea' tarea.id %}">Mostrar más</a></td>
             </tr>
             {% empty %}
             <tr>
-                <td>Aún no se ha creado ninguna tarea</td>
+                <td>Aún no existe ninguna tarea</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <br>
-    <br>
 </div>
-
-{% endblock %}
+<br> {% endblock %}

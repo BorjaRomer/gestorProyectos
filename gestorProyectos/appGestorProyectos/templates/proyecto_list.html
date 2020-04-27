@@ -1,31 +1,33 @@
 {% extends 'index.html' %}
 {% load static %}
-
-{% block header %}
-    <header class="masthead bg-primary text-white text-center">
-        <div class="container d-flex align-items-center flex-column">
-            <h1 class="masthead-heading text-uppercase mb-0">Lista de proyectos</h1>
-        </div>
-    </header>
+{% block styles %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link href="{% static 'css/list.css' %}" rel="stylesheet" />
 {% endblock %}
-
+{% block header %}
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="masthead-heading text-uppercase mb-0">Lista de proyectos</h1>
+    </div>
+</header>
+{% endblock %}
 {% block main %}
 <br>
+<div style="text-align: center;">
+    <a style="font-weight: bold; text-transform: uppercase;" class="btn btn-warning" href="{% url 'proyecto_form' %}">Nuevo proyecto</a>
+</div>
 <br>
-<a class="btn btn-primary" href="{% url 'proyecto_form' %}">Nuevo proyecto</a>
-<br>
-<br>
-<div>
-    <table class="table">
+<div class="table-users">
+    <div class="header">Proyectos</div>
+
+    <table cellspacing="0">
         <thead>
             <tr>
                 <th>Nombre</th>
                 <th>Fecha de inicio</th>
-                <th>Fecha de fin</th>
+                <th>Fecha de entrega</th>
                 <th>Responsable</th>
-                <th>Detalles</th>
-                <th>Editar</th>
-                <th>Eliminar</th>
+                <th>Más acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -34,21 +36,15 @@
                 <td>{{ proyecto.nombre }}</td>
                 <td>{{ proyecto.fecha_inicio }}</td>
                 <td>{{ proyecto.fecha_fin }}</td>
-                <th>{{ proyecto.responsable }}</th>
-                <td><a class="btn btn-success" href="{% url 'proyecto' proyecto.id %}">Detalles</a> </td>
-                <td><a class="btn btn-info" href="{% url 'proyecto_update' proyecto.id %}">Editar</a> </td>
-                <td><a class="btn btn-danger" href="{% url 'proyecto_delete' proyecto.id %}">Eliminar</a> </td>
+                <td>{{ proyecto.responsable }}</td>
+                <td><a class="btn btn-warning" href="{% url 'proyecto' proyecto.id %}">Mostrar más</a></td>
             </tr>
             {% empty %}
             <tr>
-                <td>Aún no se ha creado ningún proyecto</td>
+                <td>Aún no existe ningún proyecto</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <br>
-    <br>
 </div>
-
-{% endblock %}
-
+<br> {% endblock %}
