@@ -14,8 +14,8 @@ class ProyectoForm(ModelForm):
         widgets = {
             'nombre': forms.TextInput(attrs={'class': 'form-control'}),
             'descripcion': forms.TextInput(attrs={'class': 'form-control'}),
-            'fecha_inicio': DateInput(),
-            'fecha_fin': DateInput(),
+            'fecha_inicio': DateInput(attrs={'class': 'form-control'}),
+            'fecha_fin': DateInput(attrs={'class': 'form-control'}),
             'presupuesto': forms.NumberInput(attrs={'class': 'form-control'}),
             'nombre_cliente': forms.TextInput(attrs={'class': 'form-control'}),
             'apellidos_cliente': forms.TextInput(attrs={'class': 'form-control'}),

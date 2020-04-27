@@ -33,7 +33,7 @@ class ClienteDetailView(DetailView):
 class ProyectoCreateView(LoginRequiredMixin, CreateView):
     model = Proyecto
     form_class = ProyectoForm
-    template_name = 'proyecto_form.html'
+    template_name = 'proyecto_form2.html'
 
     def get_success_url(self):
         return reverse('proyecto_list')
