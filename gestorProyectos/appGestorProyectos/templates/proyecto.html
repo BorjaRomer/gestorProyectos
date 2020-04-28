@@ -49,8 +49,7 @@
                 </div>
             </div>
             <div id="next">
-                <a href=""><img id="img_atras" src="{% static 'img/atras.png' %}" alt="atras"></a>
-                <a href=""><img id="img_adelante" src="{% static 'img/adelante.png' %}" alt="adelante"></a>
+                <td><a class="btn btn-danger" href="{% url 'proyecto_delete' proyecto.id %}">Eliminar proyecto</a></td>
             </div>
         </div>
     </article>
