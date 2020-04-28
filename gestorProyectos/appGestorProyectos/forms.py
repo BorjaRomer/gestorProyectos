@@ -21,8 +21,8 @@ class ProyectoForm(ModelForm):
             'apellidos_cliente': forms.TextInput(attrs={'class': 'form-control'}),
             'email_cliente': forms.EmailInput(attrs={'class': 'form-control'}),
             'telefono_cliente': forms.NumberInput(attrs={'class': 'form-control'}),
-            'tarea': forms.CheckboxSelectMultiple(),
-            #responsable
+            'tarea': forms.SelectMultiple(attrs={'class': 'form-control'}),
+            'responsable': forms.Select(attrs={'class': 'form-control'}),
         }
 
 

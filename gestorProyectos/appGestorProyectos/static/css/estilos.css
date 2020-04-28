@@ -7162,7 +7162,7 @@ button.bg-dark:focus {
 
 .flex-column {
     flex-direction: column !important;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .flex-row-reverse {
@@ -10243,7 +10243,7 @@ a.text-dark:focus {
 
 @media (min-width: 992px) {
     .masthead {
-        padding-top: calc(1rem + 104px);
+        padding-top: calc(1rem + 90px);
         padding-bottom: 1rem;
     }
     .masthead .masthead-heading {

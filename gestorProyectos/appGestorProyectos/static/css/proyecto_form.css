@@ -105,7 +105,7 @@ form.register .infobox{
 }
 form.register legend
 {
-    color: #b8860b;
+    color: #212529;
     padding:2px;
     margin-left: 14px;
     font-weight:bold;
@@ -191,8 +191,7 @@ form.register input[type=checkbox] {
 }
 form.register select
 {
-    border: 1px solid #E1E1E1;
-    width: 130px;
+    width: 245px;
     float:left;
     margin-bottom:3px;
     color: #505050;
