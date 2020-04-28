@@ -1,6 +1,6 @@
 #principal {
-    background-color: white;
-    height: 600px;
+    background-color: #dcdcdc;
+    height: 550px;
     width: auto;
     display: flex;
     justify-content: center;
@@ -181,3 +181,11 @@
     background-size: 100% 2px;
 }
 
+#boton_atras{
+background-color: #dcdcdc;
+padding-bottom: 20px;
+}
+
+#boton_atras a{
+margin-left: 40px;
+}
