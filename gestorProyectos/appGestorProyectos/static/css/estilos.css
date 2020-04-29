@@ -314,12 +314,19 @@ input[type=time],
 input[type=datetime-local],
 input[type=month] {
     -webkit-appearance: listbox;
-    background-color: #f0f0f0;
-    margin-top: 8px;
-    margin-left: 5px;
-    padding-left: 5px;
-    height: 28px;
-    border-radius: 0.5em;
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 1rem);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0.125rem solid #ced4da;
+    border-radius: 0.5rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 textarea {
