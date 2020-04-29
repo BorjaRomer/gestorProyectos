@@ -35,10 +35,10 @@ class TareaForm(ModelForm):
             'descripcion': forms.TextInput(attrs={'class': 'form-control'}),
             'fecha_inicio': DateInput(),
             'fecha_fin': DateInput(),
-            #responsable
-            #nivel_prioridad
+            'responsable': forms.Select(),
+            # nivel_prioridad
             'notas': forms.TextInput(attrs={'class': 'form-control'}),
-            #estado_tarea
+            # estado_tarea
         }
 
 
