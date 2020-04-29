@@ -71,7 +71,7 @@ form.register fieldset.row2
 {
     border-top:1px solid #F1F1F1;
     border-right:1px solid #F1F1F1;
-    height:220px;
+    height:270px;
     padding:5px;
     float:left;
 }
@@ -194,9 +194,16 @@ form.register select
     width: 245px;
     float:left;
     margin-bottom:3px;
-    color: #505050;
-    margin-right:5px;
+    color: black;
+    margin-right:1px;
+    margin-top: 8px;
+    margin-left: 5px;
+    background-color: #f0f0f0;
+    padding-left: 5px;
+    height: 28px;
+    border-radius: 0.5em;
 }
+
 form.register select.date
 {
     width: 40px;

@@ -136,6 +136,7 @@ form.register input{
     width: 245px;
     float: left;
     margin-right: 5px;
+    margin-left: 3px;
 }
 form.register input.long{
     width: 247px;

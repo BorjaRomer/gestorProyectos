@@ -314,6 +314,12 @@ input[type=time],
 input[type=datetime-local],
 input[type=month] {
     -webkit-appearance: listbox;
+    background-color: #f0f0f0;
+    margin-top: 8px;
+    margin-left: 5px;
+    padding-left: 5px;
+    height: 28px;
+    border-radius: 0.5em;
 }
 
 textarea {
