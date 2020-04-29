@@ -2,77 +2,72 @@
 
 {% load static %}
 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/proyecto_form.css' %}">
+{% endblock %}
+
 {% block header %}
-    <header class="masthead bg-primary text-white text-center">
-        <div class="container d-flex align-items-center flex-column">
-            <h1 class="masthead-heading text-uppercase mb-0">Modificar tarea</h1>
-        </div>
-    </header>
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="masthead-heading text-uppercase mb-0">Modificar tarea</h1>
+    </div>
+</header>
 {% endblock %}
 
 {% block main %}
 
-<br>
-<form method="post" class="list-group-horizontal">
-    {% csrf_token %}
-
-    <div class="form-group">
-        <label class="col-sm-2 control-label">{{ form.nombre.label }}</label>
-        <div class="col-sm-8">
-            {{ form.nombre }}
+<section id="pfbody">
+    <form method="post" class="register">
+        {% csrf_token %}
+        <fieldset class="row1">
+            <legend>Detalles de la tarea</legend>
+            <p class="pfp">
+                <label>Nombre</label>
+                {{ form.nombre }}
+            </p>
+            <p class="pfp">
+                <label>Descripción
+                </label>
+                {{ form.descripcion }}
+            </p>
+        </fieldset>
+        <fieldset class="row2">
+            <legend>Tarea</legend>
+            <p class="pfp">
+                <label>Responsable</label>
+                {{ form.responsable }}
+            </p>
+            <p class="pfp">
+                <label>Nivel de prioridad</label>
+                {{ form.nivel_prioridad }}
+            </p>
+            <p class="pfp">
+                <label>Estado de la tarea</label>
+                {{ form.estado_tarea }}
+            </p>
+        </fieldset>
+        <fieldset class="row3">
+            <legend>Más información</legend>
+            <p class="pfp">
+                <label>Fecha inicio</label>
+                {{ form.fecha_inicio }}
+            </p>
+            <p class="pfp">
+                <label>Fecha final</label>
+                {{ form.fecha_fin }}
+            </p>
+            <p class="pfp">
+                <label>Notas</label>
+                {{ form.notas }}
+            </p>
+        </fieldset>
+        <div>
+            <input class="button" type="submit" name="submit" value="Guardar cambios">
         </div>
-    </div>
-    <div class="form-group">
-        <label class="col-sm-2 control-label">{{ form.descripcion.label }}</label>
-        <div class="col-sm-8">
-            {{ form.descripcion }}
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-sm-2 control-label">{{ form.fecha_inicio.label }}</label>
-        <div class="col-sm-8">
-            {{ form.fecha_inicio }}
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-sm-2 control-label">{{ form.fecha_fin.label }}</label>
-        <div class="col-sm-8">
-            {{ form.fecha_fin }}
-        </div>
-    </div>
-        <div class="form-group">
-        <label class="col-sm-2 control-label">{{ form.responsable.label }}</label>
-        <div class="col-sm-8">
-            {{ form.responsable }}
-        </div>
-    </div>
-            <div class="form-group">
-        <label class="col-sm-2 control-label">{{ form.nivel_prioridad.label }}</label>
-        <div class="col-sm-8">
-            {{ form.nivel_prioridad }}
-        </div>
-    </div>
-            <div class="form-group">
-        <label class="col-sm-2 control-label">{{ form.notas.label }}</label>
-        <div class="col-sm-8">
-            {{ form.notas }}
-        </div>
-    </div>
-            <div class="form-group">
-        <label class="col-sm-2 control-label">{{ form.estado_tarea.label }}</label>
-        <div class="col-sm-8">
-            {{ form.estado_tarea }}
-        </div>
-    </div>
-    <br>
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-8">
-            <a class="btn btn-dark" href="javascript: history.go(-1)">Atras</a>
-            <input class="btn btn-primary pull-right" type="submit" name="submit" value="Guardar cambios">
-        </div>
-
-    </div>
-
-</form>
+    </form>
+</section>
+<div id="boton_atras">
+    <a class="btn btn-dark" href="javascript: history.go(-1)">Atras</a>
+</div>
 
 {% endblock %}
