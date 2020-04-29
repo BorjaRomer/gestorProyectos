@@ -37,7 +37,7 @@
                 <td>{{ proyecto.fecha_inicio }}</td>
                 <td>{{ proyecto.fecha_fin }}</td>
                 <td>{{ proyecto.responsable }}</td>
-                <td><a class="btn btn-warning" href="{% url 'proyecto' proyecto.id %}">Mostrar más</a></td>
+                <td style="text-align: center;"><a class="btn btn-warning" href="{% url 'proyecto' proyecto.id %}">Mostrar más</a></td>
             </tr>
             {% empty %}
             <tr>
