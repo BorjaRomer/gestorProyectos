@@ -23,18 +23,23 @@
         <div id="tarjeta_down">
             <div id="tarjeta_down_titulo">
                 <img src="{% static 'img/logo.png' %}" alt="empresa">
-                <h3>{{ tarea.nombre }}</h3>
+                <h3>Nombre de la tarea: <p>{{ tarea.nombre }}</p></h3>
             </div>
             <div id="izquierda">
-                <h4>Tareas:</h4>
-                <ul id="participantes">
-                    <li><a class="subrayado">{{ tarea.responsable }}</a></li>
+                <h4>Responsable</h4>
+                <ul class="participantes">
+                    <li>{{ tarea.responsable }}</li>
                 </ul>
-                <p class="presupuesto">Prioridad: {{ tarea.nivel_prioridad }}</p>
+                <br>
+                <h4>Prioridad</h4>
+                <ul class="participantes">
+                    <li>{{ tarea.nivel_prioridad }}</li>
+                </ul>
             </div>
             <div id="derecha">
+                <br>
                 <div id="derecha_nombre">
-                    <p id="derecha_p1">Responsable del proyecto: {{ tarea.responsable }}</p>
+                    <p id="derecha_p1">Responsable: {{ tarea.responsable }}</p>
                 </div>
                 <div id="derecha_fechas">
                     <p class="fechas">Fecha de inicio: {{ tarea.fecha_inicio }}</p>
