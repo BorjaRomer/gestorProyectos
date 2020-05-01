@@ -43,7 +43,7 @@
                     <p id="derecha_p2">DNI: {{ empleado.dni }}</p>
                     <br>
                 </div>
-                <div style="padding-left: 50px">
+                <div style="padding-left: 200px">
                     <h4>Foto de perfil</h4>
                     {% if empleado.imagen %}
                         <td><img src="{{ empleado.imagen.url }}" width="240"> </td>
@@ -60,7 +60,6 @@
 </section>
 <div id="boton_atras">
     <a class="btn btn-dark" href="javascript: history.go(-1)">Atras</a>
-
 </div>
 <br>
 {% endblock %}
