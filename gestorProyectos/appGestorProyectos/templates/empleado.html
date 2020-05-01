@@ -2,48 +2,42 @@
 
 {% load static %}
 
+{% block styles %}
+<link href="{% static 'css/empleado.css' %}" rel="stylesheet"/>
+{% endblock %}
+
 {% block header %}
-    <header class="masthead bg-primary text-white text-center">
-        <div class="container d-flex align-items-center flex-column">
-            <h1 class="masthead-heading text-uppercase mb-0">Detalles del empleado</h1>
-        </div>
-    </header>
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="masthead-heading text-uppercase mb-0">Detalles del empleado</h1>
+    </div>
+</header>
 {% endblock %}
 
 {% block main %}
-<br>
-<table class="table">
-    <tr>
-        <td>ID</td>
-        <td>{{ empleado.id }}</td>
-    </tr>
-    <tr>
-        <td>Nombre</td>
-        <td>{{ empleado.nombre }}</td>
-    </tr>
-    <tr>
-        <td>Apellidos</td>
-        <td>{{ empleado.apellidos }}</td>
-    </tr>
-    <tr>
-        <td>Email</td>
-        <td>{{ empleado.email }}</td>
-    </tr>
-    <tr>
-        <td>Telefono</td>
-        <td>{{ empleado.telefono }}</td>
-    </tr>
-    <tr>
-        <td>Foto de perfil</td>
-        {% if empleado.imagen %}
-            <td><img src="{{ empleado.imagen.url }}" width="240"> </td>
-        {% else %}
-            <td><img src="{% static 'img/SinFotoPerfil.jpg' %}" width="240"> </td>
-        {% endif %}
-    </tr>
-</table>
-<a class="btn btn-dark" href="javascript: history.go(-1)">Atras</a>
-<br>
-<br>
+<section id="ebody">
+    <div id="login-box">
+        <div class="left">
+            <h1 id="eh1">{{ empleado.nombre }}</h1>
+            <p class="text">Apellidos: {{ empleado.apellidos }}</p>
+            <p class="text">DNI: {{ empleado.dni }}</p>
+            <p class="text">Email: {{ empleado.email }}</p>
+            <p class="text">Teléfono: {{ empleado.telefono }}</p>
+        </div>
 
+        <div class="right">
+            {% if empleado.imagen %}
+                <td><img src="{{ empleado.imagen.url }}" width="140"> </td>
+             {% else %}
+                <td><img src="{% static 'img/SinFotoPerfil.jpg' %}" width="240"> </td>
+            {% endif %}
+            <div id="next">
+                <td><a class="btn btn-danger posbot" href="{% url 'empleado_delete' empleado.id %}">Eliminar empleado</a></td>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="boton_atras">
+    <a class="btn btn-dark" href="javascript: history.go(-1)">Atras</a>
+</div>
 {% endblock %}

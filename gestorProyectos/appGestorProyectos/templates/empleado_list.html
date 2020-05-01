@@ -27,8 +27,6 @@
                 <th>DNI</th>
                 <th>Nombre</th>
                 <th>Apellidos</th>
-                <th>Email</th>
-                <th>Telefono</th>
                 <th>Más acciones</th>
             </tr>
         </thead>
@@ -38,14 +36,12 @@
                 {% if empleado.imagen %}
                 <td><img src="{{ empleado.imagen.url }}"> </td>
                 {% else %}
-                <td><img src="{% static 'img/SinFotoPerfil.jpg' %}" width="240"> </td>
+                <td><img src="{% static 'img/SinFotoPerfil.jpg' %}"> </td>
                 {% endif %}
                 <td>{{ empleado.dni }}</td>
                 <td>{{ empleado.nombre }}</td>
                 <td>{{ empleado.apellidos }}</td>
-                <td>{{ empleado.email }}</td>
-                <td>{{ empleado.telefono }}</td>
-                <td><a class="btn btn-warning" href="{% url 'empleado' empleado.id %}">Mostrar más</a></td>
+                <td style="text-align: center;"><a class="btn btn-warning" href="{% url 'empleado' empleado.id %}">Mostrar más</a></td>
             </tr>
             {% empty %}
             <tr>

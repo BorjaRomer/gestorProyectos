@@ -129,7 +129,7 @@ class EmpleadoCreateView(LoginRequiredMixin, CreateView):
 
 class EmpleadoDetailView(DetailView):
     model = Empleado
-    template_name = 'empleado2.html'
+    template_name = 'empleado.html'
 
     def get_context_data(self, **kwargs):
         context = super(EmpleadoDetailView, self).get_context_data(**kwargs)

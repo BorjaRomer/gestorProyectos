@@ -1,6 +1,5 @@
 #principal {
     background-color: #dcdcdc;
-    height: 550px;
     width: auto;
     display: flex;
     justify-content: center;
@@ -12,8 +11,9 @@
     width: 850px;
     background-color: white;
     border-radius: 10px;
-    border: 1px solid rgb(33, 58, 33);
     box-shadow: 5px 5px 10px #666;
+    position: relative;
+    margin: 5% auto;
 }
 
 #tarjeta_up {
