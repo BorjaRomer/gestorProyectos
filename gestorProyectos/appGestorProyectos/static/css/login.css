@@ -20,11 +20,12 @@ body {
 
 .login {
     background: #eceeee;
-    border: 1px solid #42464b;
-    border-radius: 6px;
+    border: 1px solid #42464b00;
+    border-radius: 10px;
     height: 257px;
     margin: auto;
     width: 298px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .login h1 {

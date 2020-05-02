@@ -15,7 +15,7 @@
 
 img {
     border-radius: 50%;
-    height: 140px;
+    height: 150px;
     width: 150px;
 }
 
@@ -40,7 +40,6 @@ img {
 }
 
 #eh1 {
-    margin: 0 0 50px 0;
     font-weight: 300;
     font-size: 28px;
 }
@@ -91,4 +90,16 @@ padding-bottom: 20px;
 
 #boton_atras a{
 margin-left: 40px;
+}
+
+#editar {
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin: 0px 25px 0px 9px;
+}
+
+#empedit {
+    margin-bottom: 50px;
+    display: flex;
 }

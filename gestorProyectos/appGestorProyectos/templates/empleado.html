@@ -18,7 +18,10 @@
 <section id="ebody">
     <div id="login-box">
         <div class="left">
-            <h1 id="eh1">{{ empleado.nombre }}</h1>
+            <div id="empedit">
+                <h1 id="eh1">{{ empleado.nombre }}</h1>
+                <a href="{% url 'empleado_update' empleado.id %}"><img id="editar" src="{% static 'img/edit.PNG' %}" alt="editar"></a>
+            </div>
             <p class="text">Apellidos: {{ empleado.apellidos }}</p>
             <p class="text">DNI: {{ empleado.dni }}</p>
             <p class="text">Email: {{ empleado.email }}</p>

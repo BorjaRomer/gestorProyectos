@@ -12,11 +12,9 @@
 </header>
 {% endblock %}
 {% block main %}
-<br>
-<div style="text-align: center;">
-    <a style="font-weight: bold; text-transform: uppercase;" class="btn btn-warning" href="{% url 'proyecto_form' %}">Nuevo proyecto</a>
+<div id="botnnew">
+    <a style="font-weight: bold; text-transform: uppercase;" class="btn btn-warning bti" href="{% url 'proyecto_form' %}">Nuevo proyecto</a>
 </div>
-<br>
 <div class="table-users">
     <div class="header">Proyectos</div>
 
@@ -47,4 +45,4 @@
         </tbody>
     </table>
 </div>
-<br> {% endblock %}
+{% endblock %}

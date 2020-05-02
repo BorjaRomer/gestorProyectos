@@ -1,17 +1,24 @@
-{% extends 'index.html' %} {% load static %} {% block styles %}
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block styles %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link href="{% static 'css/list.css' %}" rel="stylesheet" /> {% endblock %} {% block header %}
+<link href="{% static 'css/list.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block header %}
 <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
         <h1 class="masthead-heading text-uppercase mb-0">Lista de tareas</h1>
     </div>
 </header>
-{% endblock %} {% block main %}
-<br>
-<div style="text-align: center;">
-    <a style="font-weight: bold; text-transform: uppercase;" class="btn btn-warning" href="{% url 'tarea_form' %}">Nueva tarea</a>
+{% endblock %}
+
+{% block main %}
+<div id="botnnew">
+    <a style="font-weight: bold; text-transform: uppercase;" class="btn btn-warning bti" href="{% url 'tarea_form' %}">Nueva tarea</a>
 </div>
-<br>
 <div class="table-users">
     <div class="header">Tareas</div>
 
