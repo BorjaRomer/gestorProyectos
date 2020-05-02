@@ -20,7 +20,7 @@
     <form method="post" class="register">
         {% csrf_token %}
         <fieldset class="row1">
-            <legend>DETALLES DEL PROYECTO</legend>
+            <legend>Detalles del proyecto</legend>
             <p class="pfp">
                 <label>Nombre</label>
                 {{ form.nombre }}
@@ -32,7 +32,7 @@
             </p>
         </fieldset>
         <fieldset class="row2">
-            <legend>CLIENTE</legend>
+            <legend>Cliente</legend>
             <p class="pfp">
                 <label>Nombre</label>
                 {{ form.nombre_cliente }}
@@ -51,7 +51,7 @@
             </p>
         </fieldset>
         <fieldset class="row3">
-            <legend>MÁS INFORMACIÓN</legend>
+            <legend>Más información</legend>
             <p class="pfp">
                 <label>Fecha inicio</label>
                 {{ form.fecha_inicio }}
