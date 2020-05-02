@@ -1,0 +1,77 @@
+.main>div {
+    display: block;
+    width: 49%;
+    margin: auto;
+    height: 380px;
+}
+
+.two .info {
+    border: none;
+    margin: 5% auto;
+}
+
+.info {
+    width: 500px;
+    padding: 10px;
+    border: 7px solid #72B372;
+    border-radius: 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #444;
+    background-color: #F0F0F0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4)
+}
+
+.info h3 {
+    margin: 0 15px 20px;
+    border-bottom: 2px solid #b8860b;
+    padding: 5px 10px 5px 0;
+    font-size: 1.1em;
+}
+
+.info div {
+    margin: 0 0 15px 0;
+    border: none;
+}
+
+.info label {
+    display: inline-block;
+    width: 25%;
+    text-align: right;
+    margin: 10px;
+}
+
+.text {
+    width: 65%;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+    padding: 5px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    text-align: center;
+    margin: 8px auto 8px auto;
+}
+
+
+#boton_atras{
+background-color: #dcdcdc;
+padding-bottom: 20px;
+}
+
+#boton_atras a{
+margin-left: 40px;
+}
+
+.doble{
+    display: flex;
+}
+
+.doble2 {
+    display: block;
+}
+
+#btnizq {
+    float: left;
+}
+
+#btnder {
+    float: right;
+}
