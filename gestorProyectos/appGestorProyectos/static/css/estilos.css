@@ -219,6 +219,8 @@ figure {
 img {
     vertical-align: middle;
     border-style: none;
+    display: block;
+    margin: auto;
 }
 
 svg {
@@ -602,6 +604,13 @@ pre code {
     padding-left: 1.5rem;
     margin-right: auto;
     margin-left: auto;
+}
+
+.container2 {
+    width: 100%;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    margin: 100px auto 100px auto;
 }
 
 @media (min-width: 576px) {
@@ -8091,7 +8100,7 @@ button.bg-dark:focus {
 
 .mb-5,
 .my-5 {
-    margin-bottom: 3rem !important;
+
 }
 
 .ml-5,
@@ -9855,6 +9864,7 @@ button.bg-dark:focus {
 
 .text-uppercase {
     text-transform: uppercase !important;
+    text-align: center;
 }
 
 .text-capitalize {
