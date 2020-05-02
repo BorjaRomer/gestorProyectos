@@ -26,7 +26,7 @@
 #titulo_tarjeta {
     font-size: 23px;
     letter-spacing: 4px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:  'Roboto', sans-serif;
     color: black;
     margin: 15px 0px 0px 30px;
     float: left;
@@ -68,7 +68,7 @@
     width: 30%;
     float: left;
     margin-top: 10px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:  'Roboto', sans-serif;
     color: rgb(51, 51, 51);
 }
 
@@ -107,7 +107,7 @@
     margin: 0px 140px 0px 140px;
     border-bottom: 1px solid black;
     font-size: 18px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Roboto', sans-serif;
     padding-bottom: 5px;
     letter-spacing: 2px;
 }
@@ -115,7 +115,7 @@
 #derecha_p2 {
     margin: 0;
     font-size: 18px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Roboto', sans-serif;
     padding-top: 5px;
     letter-spacing: 2px;
 }
@@ -129,14 +129,14 @@
 
 .fechas {
     font-size: 17px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Roboto', sans-serif;
     letter-spacing: 1.5px;
     margin: 20px 20px 0px 20px;
 }
 
 #derecha_descripcion {
     margin: 40px 20px 0px 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 #derecha_descripcion p {
