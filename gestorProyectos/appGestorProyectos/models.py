@@ -21,7 +21,6 @@ class Tarea(models.Model):
     fecha_fin = models.DateField(("Date"), default=date.today)
     responsable = models.ForeignKey(Empleado, on_delete=models.CASCADE, default="")
     prioridad_tarea_choices = (
-        ('', ''),
         ('Urgente', 'Urgente'),
         ('Alta', 'Alta'),
         ('Moderada', 'Moderada'),
@@ -30,7 +29,6 @@ class Tarea(models.Model):
     nivel_prioridad = models.CharField(choices=prioridad_tarea_choices, default='', max_length=20)
     notas = models.TextField(max_length=300)
     estado_tarea_choices = (
-        ('', ''),
         ('Abierta', 'Abierta'),
         ('Asignada', 'Asignada'),
         ('En proceso', 'En proceso'),

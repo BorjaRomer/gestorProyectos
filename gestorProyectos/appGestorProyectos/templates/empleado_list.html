@@ -15,42 +15,43 @@
 {% endblock %}
 
 {% block main %}
-<div id="botnnew">
-    <a style="font-weight: bold; text-transform: uppercase;" class="btn btn-warning bti" href="{% url 'empleado_form' %}">Nuevo empleado</a>
-</div>
-<div class="table-users">
-    <div class="header">Empleados</div>
+<main>
+    <div id="botnnew">
+        <a style="font-weight: bold; text-transform: uppercase;" class="btn btn-warning bti" href="{% url 'empleado_form' %}">Nuevo empleado</a>
+    </div>
+    <div class="table-users">
+        <div class="header">Empleados</div>
 
-    <table cellspacing="0">
-        <thead>
-            <tr>
-                <th>Imagen</th>
-                <th>DNI</th>
-                <th>Nombre</th>
-                <th>Apellidos</th>
-                <th>Más acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for empleado in empleado_list %}
-            <tr>
-                {% if empleado.imagen %}
-                <td><img src="{{ empleado.imagen.url }}"> </td>
-                {% else %}
-                <td><img src="{% static 'img/SinFotoPerfil.jpg' %}"> </td>
-                {% endif %}
-                <td>{{ empleado.dni }}</td>
-                <td>{{ empleado.nombre }}</td>
-                <td>{{ empleado.apellidos }}</td>
-                <td style="text-align: center;"><a class="btn btn-warning" href="{% url 'empleado' empleado.id %}">Mostrar más</a></td>
-            </tr>
-            {% empty %}
-            <tr>
-                <td>Aún no existe ningún empleado</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
-<br>
+        <table cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Más acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for empleado in empleado_list %}
+                <tr>
+                    {% if empleado.imagen %}
+                    <td><img src="{{ empleado.imagen.url }}"> </td>
+                    {% else %}
+                    <td><img src="{% static 'img/SinFotoPerfil.jpg' %}"> </td>
+                    {% endif %}
+                    <td>{{ empleado.dni }}</td>
+                    <td>{{ empleado.nombre }}</td>
+                    <td>{{ empleado.apellidos }}</td>
+                    <td style="text-align: center;"><a class="btn btn-warning" href="{% url 'empleado' empleado.id %}">Mostrar más</a></td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td>Aún no existe ningún empleado</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
 {% endblock %}

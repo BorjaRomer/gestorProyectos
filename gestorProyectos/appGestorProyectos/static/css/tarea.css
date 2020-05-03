@@ -1,187 +1,60 @@
-#principal {
-    background-color: #dcdcdc;
-    height: 550px;
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#tarjeta_alta {
-    height: 500px;
-    width: 850px;
-    background-color: white;
-    border-radius: 10px;
-    border: 1px solid rgb(33, 58, 33);
-    box-shadow: 5px 5px 10px #666;
-}
-
-#tarjeta_up {
-    height: 10%;
-    background-color: #d6ac40;
-    border-bottom: 2px solid rgb(33, 58, 33);
-    border-radius: 10px 10px 0px 0px;
-}
-
-#titulo_tarjeta {
-    font-size: 23px;
-    letter-spacing: 4px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: black;
-    margin: 15px 0px 0px 30px;
-    float: left;
-}
-
-#editar {
-    width: 30px;
-    height: 30px;
-    float: right;
-    margin: 12px 25px 0px 0px;
-}
-
-#tarjeta_down {
-    height: 90%;
-}
-
-#tarjeta_down_titulo {
-    width: 850px;
-    height: 100px;
-}
-
-#tarjeta_down_titulo img {
-    width: 160px;
-    height: 90px;
-    float: left;
-    margin: 10px 0px 0px 15px;
-}
-
-#tarjeta_down_titulo h3 {
-    display: inline-block;
-    text-align: center;
-    width: 670px;
-    margin-top: 50px;
-    font-size: 30px;
-}
-
-#izquierda {
-    height: 290px;
-    width: 30%;
-    float: left;
-    margin-top: 10px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: rgb(51, 51, 51);
-}
-
-#izquierda h4 {
-    text-align: left;
-    margin: 20px 0px 10px 20px;
-}
-
-.participantes {
-    margin: 0px 0px 20px 40px;
-    font-size: larger;
-}
-
-#participantes li {
-    padding-bottom: 5px;
-}
-
-#imagen_progreso {
-    width: 120px;
-    height: 120px;
+.main>div {
     display: block;
+    width: 600px;
     margin: auto;
+    height: auto;
 }
 
-#derecha {
-    float: right;
-    width: 70%;
-    height: 300px;
+.two .info {
+    border: none;
+    margin: 5% auto;
 }
 
-#derecha_nombre {
-    margin-top: 20px;
+.info {
+    width: 500px;
+    padding: 10px;
+    border: 7px solid #72B372;
+    border-radius: 10px;
+    font-family:'Roboto', sans-serif;
+    color: #444;
+    background-color: #F0F0F0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4)
+}
+
+.info h3 {
+    margin: 0 15px 20px;
+    border-bottom: 2px solid #b8860b;
+    padding: 5px 10px 5px 0;
+    font-size: 1.5em;
+}
+
+.info div {
+    margin: 0 0 15px 0;
+    border: none;
+}
+
+.info label {
+    display: inline-block;
+    width: 25%;
+    text-align: right;
+    margin: 10px;
+}
+
+.important {
+}
+
+.text {
+    width: 65%;
+    font-family: 'Roboto', sans-serif;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 5px;
     text-align: center;
+    margin: 8px auto 8px auto;
+    border-bottom: 1px solid #AAA;
 }
 
-#derecha_p1 {
-    margin: 0px 140px 0px 140px;
-    border-bottom: 1px solid black;
-    font-size: 18px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding-bottom: 37px;
-    letter-spacing: 2px;
-}
-
-#derecha_p2 {
-    margin: 0;
-    font-size: 18px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding-top: 5px;
-    letter-spacing: 2px;
-}
-
-#derecha_fechas {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.fechas {
-    font-size: 17px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    letter-spacing: 1.5px;
-    margin: 20px 20px 0px 20px;
-}
-
-#derecha_descripcion {
-    margin: 40px 20px 0px 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-#derecha_descripcion p {
-    text-align: justify;
-}
-
-#next {
-    margin-top: 300px;
-    width: 100%;
-    height: 48px;
-    padding-left: 20px;
-}
-
-#img_atras {
-    width: 30px;
-    height: 30px;
-    float: left;
-    margin: 10px 0px 0px 20px;
-}
-
-#img_adelante {
-    width: 30px;
-    height: 30px;
-    float: right;
-    margin: 10px 20px 0px 0px;
-}
-
-.presupuesto {
-    margin: 20px 0px 10px 20px;
-}
-
-.subrayado {
-    text-decoration: none;
-    background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 0% 2px;
-    transition: background-size .3s;
-}
-
-.subrayado:hover,
-.subrayado:focus {
-    background-size: 100% 2px;
-}
 
 #boton_atras{
 background-color: #dcdcdc;
@@ -190,4 +63,25 @@ padding-bottom: 20px;
 
 #boton_atras a{
 margin-left: 40px;
+}
+
+.doble{
+    display: flex;
+}
+
+.doble2 {
+    display: block;
+    height: 24px;
+}
+
+#btnizq {
+    float: left;
+}
+
+#btnder {
+    float: right;
+}
+
+hr {
+   border: 3px solid #666; border-radius: 300px/10px; height: 0px; text-align: center;
 }

@@ -85,7 +85,7 @@ class TareaCreateView(LoginRequiredMixin, CreateView):
 
 class TareaDetailView(DetailView):
     model = Tarea
-    template_name = 'tarea3.html'
+    template_name = 'tarea.html'
 
     def get_context_data(self, **kwargs):
         context = super(TareaDetailView, self).get_context_data(**kwargs)
