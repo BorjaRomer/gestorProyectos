@@ -33,7 +33,7 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="subrayado nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'empleado_list' %}">EMPLEADOS</a></li>
                         {% if user.is_authenticated %}
                             <li class="fontsizee nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger">{{ user.username }}</a> </li>
-                            <li class="fontsizee nav-item mx-0 mx-lg-1"><a class="subrayado nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'logout' %}">LOG OUT</a></li>
+                            <li class="fontsizee nav-item mx-0 mx-lg-1"><a class="subrayado nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'logout' %}">CERRAR SESIÓN</a></li>
                         {% else %}
                             <li class="nav-item mx-0 mx-lg-1"><a class="subrayado nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'login' %}">INICIAR SESION</a></li>
                         {% endif %}
