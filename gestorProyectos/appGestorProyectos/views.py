@@ -19,7 +19,7 @@ class ProyectosListView(ListView):
 
 
 # CLIENTE
-class ClienteDetailView(DetailView):
+class ClienteDetailView(LoginRequiredMixin, DetailView):
     model = Proyecto
     template_name = 'cliente.html'
 
