@@ -7,10 +7,13 @@ from django.http import JsonResponse
 
 
 # API
-class TareasListView(View):
+class TareasAPI(View):
     def get(self, request):
         tareaList = Tarea.objects.all()
         return JsonResponse(list(tareaList.values()), safe=False)
+
+class TareasListView(ListView):
+    template_name = 'tarea_list2.html'
 
 # HOME
 class ProyectosListView(ListView):
