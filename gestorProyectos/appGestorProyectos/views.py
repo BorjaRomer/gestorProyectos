@@ -1,9 +1,16 @@
 from django.urls import reverse_lazy, reverse
-from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView, View
 from .forms import ProyectoForm, TareaForm, EmpleadoForm
 from .models import Empleado, Proyecto, Tarea
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import JsonResponse
 
+
+# API
+class TareasListView(View):
+    def get(self, request):
+        tareaList = Tarea.objects.all()
+        return JsonResponse(list(tareaList.values()), safe=False)
 
 # HOME
 class ProyectosListView(ListView):
