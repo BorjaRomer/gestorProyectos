@@ -1,10 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <p>Prueba</p>
-</body>
-</html>
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link href="{% static 'css/list.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block header %}
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="masthead-heading text-uppercase mb-0">Lista de tareas</h1>
+    </div>
+</header>
+{% endblock %}
+
+{% block main %}
+<main>
+    <div id="botnnew">
+        <a style="font-weight: bold; text-transform: uppercase;" class="btn btn-warning bti" href="{% url 'tarea_form' %}">Nueva tarea</a>
+    </div>
+    <div class="table-users">
+        <div class="header">Tareas</div>
+        <table cellspacing="0" id="tabla">
+        </table>
+    </div>
+</main>
+<script src="{% static 'js/tareas.js' %}"></script>
+{% endblock %}

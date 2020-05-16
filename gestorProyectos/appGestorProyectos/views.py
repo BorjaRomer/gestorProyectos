@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy, reverse
-from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView, View
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView, View, TemplateView
 from .forms import ProyectoForm, TareaForm, EmpleadoForm
 from .models import Empleado, Proyecto, Tarea
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -12,7 +12,7 @@ class TareasAPI(View):
         tareaList = Tarea.objects.all()
         return JsonResponse(list(tareaList.values()), safe=False)
 
-class TareasListView(ListView):
+class TareasListView(TemplateView):
     template_name = 'tarea_list2.html'
 
 # HOME
