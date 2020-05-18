@@ -4,7 +4,7 @@ from . import views
 urlpatterns = [
     # API
     path('tareasAPI/', views.TareasAPI.as_view(), name='tareasAPI'),
-    path('tareasListAPI', views.TareasListView.as_view(), name='tareasList'),
+    path('tareasListAPI/', views.TareasListView.as_view(), name='tareasList'),
     # HOME
     path('', views.ProyectosListView.as_view(), name='home'),
     # PROYECTOS

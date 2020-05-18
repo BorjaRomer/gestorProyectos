@@ -1,14 +1,17 @@
-function cargarDatos() {
+function cargarDatos(filtro) {
     let url = "http://127.0.0.1:8000/tareasAPI/"
     fetch(url)
         .then((respuesta) => respuesta.json())
         .then((datos) => {
-            console.log(datos)
-            crearTablaTareas(datos)
+            crearTablaTareas(datos, filtro)
         })
 }
 
-cargarDatos();
+cargarDatos("");
+
+document.getElementById('select').addEventListener('change', function(event) {
+    cargarDatos(event.target.value);
+});
 
 function crearCabezera(array2) {
     let cabezera = '<tr>'
@@ -31,19 +34,22 @@ function crearFila(objeto) {
     return fila;
 }
 
-function crearTabla(array) {
+function crearTabla(array, filtro) {
     let cabecera = '<thead>' + crearCabezera(array) + '</thead>';
     let tabla = cabecera + '<tbody>';
     for (const objeto of array) {
-        tabla += crearFila(objeto);
+        if(objeto.estado_tarea == filtro) {
+            tabla += crearFila(objeto);
+        }else if(filtro === "") {
+            tabla += crearFila(objeto);
+        }
     }
     tabla += '</tbody>';
     return tabla;
 }
 
-function crearTablaTareas(tareas) {
-    let tablaINSERT = crearTabla(tareas);
+function crearTablaTareas(tareas, filtro) {
+    let tablaINSERT = crearTabla(tareas, filtro);
     document.getElementById('tabla').innerHTML = tablaINSERT;
 }
 
-//crearTablaTareas(tareas);
