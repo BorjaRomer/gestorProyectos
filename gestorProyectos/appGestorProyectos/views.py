@@ -1,3 +1,4 @@
+from django.forms import model_to_dict
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView, View, TemplateView
 from .forms import ProyectoForm, TareaForm, EmpleadoForm
@@ -8,9 +9,24 @@ from django.http import JsonResponse
 
 # API
 class TareasAPI(View):
+
     def get(self, request):
         tareaList = Tarea.objects.all()
         return JsonResponse(list(tareaList.values()), safe=False)
+
+    def post(self, request):
+        tarea = Tarea()
+        tarea.nombre = request.POST["nombre"]
+        tarea.descripcion = request.POST["descripcion"]
+        tarea.fecha_inicio = request.POST["fecha_inicio"]
+        tarea.fecha_fin = request.POST["fecha_fin"]
+        tarea.responsable = request.POST["responsable"]
+        tarea.nivel_prioridad = request.POST["nivel_prioridad"]
+        tarea.notas = request.POST["notas"]
+        tarea.estado_tarea = request.POST["estado_tarea"]
+        tarea.save()
+        return JsonResponse(model_to_dict(tarea))
+
 
 class TareasListView(TemplateView):
     template_name = 'tarea_list2.html'
@@ -87,7 +103,7 @@ class ProyectoUpdateView(LoginRequiredMixin, UpdateView):
 class TareaCreateView(LoginRequiredMixin, CreateView):
     model = Tarea
     form_class = TareaForm
-    template_name = 'tarea_form.html'
+    template_name = 'tarea_form2.html'
 
     def get_success_url(self):
         return reverse('tarea_list')

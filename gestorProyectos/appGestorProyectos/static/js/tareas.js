@@ -13,16 +13,16 @@ document.getElementById('select').addEventListener('change', function(event) {
     cargarDatos(event.target.value);
 });
 
-function crearCabezera(array2) {
-    let cabezera = '<tr>'
+function crearCabecera(array2) {
+    let cabecera = '<tr>'
     for (const iterator of array2) {
         for (const key in iterator) {
-            cabezera += '<th>' + key + '</th>';
+            cabecera += '<th>' + key + '</th>';
         }
         break;
     }
-    cabezera += '</tr>'
-    return cabezera;
+    cabecera += '<th>Más acciones</th>' + '</tr>'
+    return cabecera;
 }
 
 function crearFila(objeto) {
@@ -30,12 +30,12 @@ function crearFila(objeto) {
     for (const clave in objeto) {
         fila += '<td>' + objeto[clave] + '</td>';
     }
-    fila += '</tr>';
+    fila += `<td style="text-align: center;"><a class="btn btn-warning" href="/tarea/${objeto.id}">Mostrar más</a></td></tr>`;
     return fila;
 }
 
 function crearTabla(array, filtro) {
-    let cabecera = '<thead>' + crearCabezera(array) + '</thead>';
+    let cabecera = '<thead>' + crearCabecera(array) + '</thead>';
     let tabla = cabecera + '<tbody>';
     for (const objeto of array) {
         if(objeto.estado_tarea == filtro) {
