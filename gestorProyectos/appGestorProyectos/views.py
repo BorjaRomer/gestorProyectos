@@ -1,5 +1,7 @@
 from django.forms import model_to_dict
 from django.urls import reverse_lazy, reverse
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView, View, TemplateView
 from .forms import ProyectoForm, TareaForm, EmpleadoForm
 from .models import Empleado, Proyecto, Tarea
@@ -8,7 +10,8 @@ from django.http import JsonResponse
 
 
 # API
-class TareasAPI(View):
+@method_decorator(csrf_exempt, name='dispatch')
+class TareasAPI(View, LoginRequiredMixin):
 
     def get(self, request):
         tareaList = Tarea.objects.all()
@@ -16,14 +19,14 @@ class TareasAPI(View):
 
     def post(self, request):
         tarea = Tarea()
-        tarea.nombre = request.POST["nombre"]
-        tarea.descripcion = request.POST["descripcion"]
-        tarea.fecha_inicio = request.POST["fecha_inicio"]
-        tarea.fecha_fin = request.POST["fecha_fin"]
-        tarea.responsable = request.POST["responsable"]
-        tarea.nivel_prioridad = request.POST["nivel_prioridad"]
-        tarea.notas = request.POST["notas"]
-        tarea.estado_tarea = request.POST["estado_tarea"]
+        tarea.nombre = request.POST.get("nombre", False)
+        tarea.descripcion = request.POST.get("descripcion", False)
+        tarea.fecha_inicio = request.POST.get("fecha_inicio", False)
+        tarea.fecha_fin = request.POST.get("fecha_fin", False)
+        tarea.responsable = request.POST.get("responsable", False)
+        tarea.nivel_prioridad = request.POST.get("nivel_prioridad", False)
+        tarea.notas = request.POST.get("notas", False)
+        tarea.estado_tarea = request.POST.get("estado_tarea", False)
         tarea.save()
         return JsonResponse(model_to_dict(tarea))
 
