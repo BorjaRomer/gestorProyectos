@@ -35,32 +35,32 @@
                 <legend>Tarea</legend>
                 <p class="pfp">
                     <label>Responsable</label>
-                    {{ form.responsable }}
+                    <input class="form-control" type="text" name="responsable">
                 </p>
                 <p class="pfp">
                     <label>Nivel de prioridad</label>
                     <br>
-                    {{ form.nivel_prioridad }}
+                    <input class="form-control" type="text" name="nivel_prioridad">
                 </p>
                 <p class="pfp">
                     <label>Estado de la tarea</label>
                     <br>
-                    {{ form.estado_tarea }}
+                    <input class="form-control" type="text" name="estado_tarea">
                 </p>
             </fieldset>
             <fieldset class="row3">
                 <legend>Más información</legend>
                 <p class="pfp">
                     <label>Fecha inicio</label>
-                    {{ form.fecha_inicio }}
+                    <input class="form-control" type="date" name="fecha_inicio">
                 </p>
                 <p class="pfp">
                     <label>Fecha final</label>
-                    {{ form.fecha_fin }}
+                    <input class="form-control" type="date" name="fecha_fin">
                 </p>
                 <p class="pfp">
                     <label>Notas</label>
-                    {{ form.notas }}
+                    <input class="form-control" type="text" name="notas">
                 </p>
                 <br>
                 <br>
@@ -70,7 +70,7 @@
                 <br>
             </fieldset>
             <div>
-                <input class="button" type="submit" name="submit" value="Nueva tarea">
+                <input class="button" id="btn_enviar" type="submit" name="submit" value="Nueva tarea">
             </div>
         </form>
     </section>
@@ -78,4 +78,5 @@
         <a class="btn btn-dark" href="javascript: history.go(-1)">Atras</a>
     </div>
 </main>
+<script src="{% static 'js/tarea_form.js' %}"></script>
 {% endblock %}
