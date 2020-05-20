@@ -5,7 +5,6 @@ function retornarDatos(data) {
         body : JSON.stringify(data),
         headers: {
             'Content-Type' : 'application/json',
-            'Accept': 'application/json'
         }
     })
 //    .then(response => response.json())
@@ -28,6 +27,7 @@ document.getElementById('btn_enviar').addEventListener('click', function(event){
 
     let nuevaTarea = {
         nombre: document.getElementById("id_nombre").value,
+        descripcion: document.getElementsByName("descripcion")[0].value,
         descripcion: document.getElementsByName("descripcion")[0].value,
         responsable: document.getElementById('id_responsable').value,
         nivel_prioridad: document.getElementById('id_nivel_prioridad').value,

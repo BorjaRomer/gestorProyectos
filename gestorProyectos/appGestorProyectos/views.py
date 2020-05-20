@@ -108,8 +108,8 @@ class TareaCreateView(LoginRequiredMixin, CreateView):
     form_class = TareaForm
     template_name = 'tarea_form2.html'
 
-    def get_success_url(self):
-        return reverse('tarea_list')
+    # def get_success_url(self):
+    #     return reverse('tarea_list')
 
 
 class TareaDetailView(DetailView):
