@@ -23,44 +23,44 @@
                 <legend>Detalles de la tarea</legend>
                 <p class="pfp">
                     <label>Nombre</label>
-                    <input class="form-control" type="text" name="nombre">
+                    {{ form.nombre }}
                 </p>
                 <p class="pfp">
                     <label>Descripción
                     </label>
-                    <input class="form-control" type="text" name="descripcion">
+                    {{ form.descripcion }}
                 </p>
             </fieldset>
             <fieldset class="row2">
                 <legend>Tarea</legend>
                 <p class="pfp">
                     <label>Responsable</label>
-                    <input class="form-control" type="text" name="responsable">
+                    {{ form.responsable }}
                 </p>
                 <p class="pfp">
                     <label>Nivel de prioridad</label>
                     <br>
-                    <input class="form-control" type="text" name="nivel_prioridad">
+                    {{ form.nivel_prioridad }}
                 </p>
                 <p class="pfp">
                     <label>Estado de la tarea</label>
                     <br>
-                    <input class="form-control" type="text" name="estado_tarea">
+                    {{ form.estado_tarea }}
                 </p>
             </fieldset>
             <fieldset class="row3">
                 <legend>Más información</legend>
                 <p class="pfp">
                     <label>Fecha inicio</label>
-                    <input class="form-control" type="date" name="fecha_inicio">
+                    {{ form.fecha_inicio }}
                 </p>
                 <p class="pfp">
                     <label>Fecha final</label>
-                    <input class="form-control" type="date" name="fecha_fin">
+                    {{ form.fecha_fin }}
                 </p>
                 <p class="pfp">
                     <label>Notas</label>
-                    <input class="form-control" type="text" name="notas">
+                    {{ form.notas }}
                 </p>
                 <br>
                 <br>
