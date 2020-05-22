@@ -19,11 +19,11 @@ class TareasAPI(View):
 
     def post(self, request):
         tarea = Tarea()
-        tarea.nombre = request.POST["nombre"]
+        tarea.nombre = request.POST['nombre']
         tarea.descripcion = request.POST["descripcion"]
         tarea.fecha_inicio = request.POST["fecha_inicio"]
         tarea.fecha_fin = request.POST["fecha_fin"]
-        tarea.responsable = request.POST["responsable"]
+        tarea.responsable = Empleado.objects.get(pk=request.POST["responsable"])
         tarea.nivel_prioridad = request.POST["nivel_prioridad"]
         tarea.notas = request.POST["notas"]
         tarea.estado_tarea = request.POST["estado_tarea"]
@@ -33,6 +33,13 @@ class TareasAPI(View):
 
 class TareasListView(TemplateView):
     template_name = 'tarea_list2.html'
+
+
+class TareasFormView(CreateView):
+    model = Tarea
+    form_class = TareaForm
+    template_name = 'tarea_form2.html'
+
 
 # HOME
 class ProyectosListView(ListView):
@@ -106,10 +113,10 @@ class ProyectoUpdateView(LoginRequiredMixin, UpdateView):
 class TareaCreateView(LoginRequiredMixin, CreateView):
     model = Tarea
     form_class = TareaForm
-    template_name = 'tarea_form2.html'
+    template_name = 'tarea_form.html'
 
-    # def get_success_url(self):
-    #     return reverse('tarea_list')
+    def get_success_url(self):
+        return reverse('tarea_list')
 
 
 class TareaDetailView(DetailView):

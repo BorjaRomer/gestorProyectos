@@ -5,6 +5,7 @@ urlpatterns = [
     # API
     path('tareasAPI/', views.TareasAPI.as_view(), name='tareasAPI'),
     path('tareasListAPI/', views.TareasListView.as_view(), name='tareasList'),
+    path('tareasFormAPI/', views.TareasFormView.as_view(), name='tareasForm'),
     # HOME
     path('', views.ProyectosListView.as_view(), name='home'),
     # PROYECTOS
