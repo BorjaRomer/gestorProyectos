@@ -17,6 +17,7 @@ function retornarDatos(datos){
     })
     .then(function(texto) {
        console.log(texto);
+       tareaCreada();
     })
     .catch(function(err) {
        console.log(err);
@@ -37,8 +38,23 @@ document.getElementById('btn_enviar').addEventListener('click', function(event){
         notas: document.getElementsByName("notas")[0].value,
     }
 
-    console.log(datos);
     retornarDatos(datos);
+
 });
+
+function tareaCreada(){
+
+    let nombre_tarea = document.getElementById("id_nombre").value;
+
+    let mensaje = `
+        <div id="mensaje">
+        <p id="mensaje_texto">Se ha creado con éxito la tarea: <b>${nombre_tarea}</b></p>
+        </div>
+    `
+    document.getElementById("pfbody").insertAdjacentHTML('beforeend', mensaje);
+
+    document.getElementById("myform").reset();
+
+}
 
 

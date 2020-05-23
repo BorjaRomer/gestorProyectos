@@ -4,8 +4,6 @@ from . import views
 urlpatterns = [
     # API
     path('tareasAPI/', views.TareasAPI.as_view(), name='tareasAPI'),
-    path('tareasListAPI/', views.TareasListView.as_view(), name='tareasList'),
-    path('tareasFormAPI/', views.TareasFormView.as_view(), name='tareasForm'),
     # HOME
     path('', views.ProyectosListView.as_view(), name='home'),
     # PROYECTOS
@@ -16,8 +14,8 @@ urlpatterns = [
     path('proyecto/<int:pk>/update/', views.ProyectoUpdateView.as_view(), name='proyecto_update'),
     path('proyecto/<int:pk>/cliente/', views.ClienteDetailView.as_view(), name='cliente'),
     # TAREAS
-    path('nueva_tarea/', views.TareaCreateView.as_view(), name='tarea_form'),
-    path('tareas/', views.TareaListView.as_view(), name='tarea_list'),
+    path('nueva_tareaJS/', views.TareaCreateView.as_view(), name='tarea_form'),
+    path('tareas_listJS/', views.TareasListView.as_view(), name='tareas_list'),
     path('tarea/<int:pk>/', views.TareaDetailView.as_view(), name='tarea'),
     path('tarea/<int:pk>/delete/', views.TareaDeleteView.as_view(), name='tarea_delete'),
     path('tarea/<int:pk>/update/', views.TareaUpdateView.as_view(), name='tarea_update'),

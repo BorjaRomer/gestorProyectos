@@ -31,16 +31,6 @@ class TareasAPI(View):
         return JsonResponse(model_to_dict(tarea))
 
 
-class TareasListView(TemplateView):
-    template_name = 'tarea_list2.html'
-
-
-class TareasFormView(CreateView):
-    model = Tarea
-    form_class = TareaForm
-    template_name = 'tarea_form2.html'
-
-
 # HOME
 class ProyectosListView(ListView):
     model = Proyecto
@@ -113,7 +103,7 @@ class ProyectoUpdateView(LoginRequiredMixin, UpdateView):
 class TareaCreateView(LoginRequiredMixin, CreateView):
     model = Tarea
     form_class = TareaForm
-    template_name = 'tarea_form.html'
+    template_name = 'tarea_formJS.html'
 
     def get_success_url(self):
         return reverse('tarea_list')
@@ -129,21 +119,14 @@ class TareaDetailView(DetailView):
         return context
 
 
-class TareaListView(ListView):
-    model = Tarea
-    queryset = Tarea.objects.order_by('nombre')
-    template_name = "tarea_list.html"
-
-    def get_context_data(self, **kwargs):
-        context = super(TareaListView, self).get_context_data(**kwargs)
-        context['titulo_pagina'] = 'Listado de tareas'
-        return context
+class TareasListView(TemplateView):
+    template_name = 'tarea_listJS.html'
 
 
 class TareaDeleteView(LoginRequiredMixin, DeleteView):
     model = Tarea
     template_name = "tarea_delete.html"
-    success_url = reverse_lazy('tarea_list')
+    success_url = reverse_lazy('tareas_list')
 
 
 class TareaUpdateView(LoginRequiredMixin, UpdateView):

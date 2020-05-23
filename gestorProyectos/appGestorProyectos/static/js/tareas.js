@@ -13,18 +13,6 @@ document.getElementById('select').addEventListener('change', function(event) {
     cargarDatos(event.target.value);
 });
 
-//function crearCabecera(array2) {
-//    let cabecera = '<tr>'
-//    for (const iterator of array2) {
-//        for (const key in iterator) {
-//            cabecera += '<th>' + key + '</th>';
-//        }
-//        break;
-//    }
-//    cabecera += '<th>Más acciones</th>' + '</tr>'
-//    return cabecera;
-//}
-
 function crearCabecera(){
     let cabecera = `
         <tr>
@@ -37,16 +25,6 @@ function crearCabecera(){
     `
     return cabecera;
 }
-
-//function crearFila(objeto) {
-//    let fila = '<tr>';
-//    for (const clave in objeto) {
-//        fila += '<td>' + objeto[clave] + '</td>';
-//        console.log(objeto['nombre']);
-//    }
-//    fila += `<td style="text-align: center;"><a class="btn btn-warning" href="/tarea/${objeto.id}">Mostrar más</a></td></tr>`;
-//    return fila;
-//}
 
 function crearFila(objeto){
     console.log(objeto.nombre)
