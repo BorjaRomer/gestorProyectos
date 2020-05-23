@@ -51,10 +51,9 @@ function tareaCreada(){
         <p id="mensaje_texto">Se ha creado con éxito la tarea: <b>${nombre_tarea}</b></p>
         </div>
     `
-    document.getElementById("pfbody").insertAdjacentHTML('beforeend', mensaje);
+    document.getElementById("exito").innerHTML = mensaje;
 
     document.getElementById("myform").reset();
-
 }
 
 
